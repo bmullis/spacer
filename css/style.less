@@ -1,0 +1,223 @@
+////////////////////////
+//main style for SPACER
+//////////////////////
+
+/////////////////
+//less variables
+///////////////
+
+/////////
+//colors
+///////
+
+@darkColor: #050505;
+@lightColor: #FAFAFA;
+@mainColor: #86AC2A;
+@secColor: #385D48;
+@accColor: #AF524D;
+
+////////
+//fonts
+//////
+
+@mainFont: 'Lato', sans-serif;
+@headerFont: 'Raleway', sans-serif;
+
+//////////
+//mix-ins
+////////
+
+.header {
+  font-family: @headerFont;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 1.5em;
+}
+
+.para {
+  font-family: @mainFont;
+  line-height: 2em;
+}
+
+.link {
+  font-family: @mainFont;
+  line-height: 2em;
+  text-decoration: underline;
+}
+
+////////////////
+//global styles
+//////////////
+
+body {
+  background-color: @darkColor;
+  font-family: @mainFont;
+  font-size: 15px;
+}
+
+h1 {
+  font-size: 2.25em;
+  .header;
+}
+
+h2 {
+  font-size: 1.5em;
+  .header;
+}
+
+h3 {
+  font-size: 1.25em;
+  .header;
+}
+
+.btn-primary {
+  background-color: @accColor;
+  border: none;
+}
+
+.btn-primary:active,
+.btn-primary:active:hover,
+.btn-primary:active:focus,
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: @accColor - #222;
+}
+
+/////////////
+//nav styles
+///////////
+
+.navbar-default {
+  background-color: transparent;
+  border: none;
+  transition: all .2s ease-in-out;
+}
+
+.is-scrolled {
+  background-color: @secColor;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: @lightColor;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:active,
+.navbar-default .navbar-nav > li > a:focus {
+  color: @accColor;
+}
+
+.navbar-default .navbar-brand {
+  color: @lightColor;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:active,
+.navbar-default .navbar-brand:focus {
+  color: @accColor;
+}
+
+.navbar-default .navbar-brand img {
+  display: inline;
+  margin-right: 10px;
+  margin-top: -5px;
+  width: 30px;
+}
+
+////////////////
+//header styles
+//////////////
+
+.jumbotron {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/header-image.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  color: @lightColor;
+  margin-bottom: 6em;
+  padding: 7em 0 7em 0;
+  text-align: center;
+}
+
+//////////////
+//body styles
+////////////
+
+.example {
+  color: @lightColor;
+  margin: 4em 0 4em 0;
+  text-align: center;
+}
+
+.example img {
+  margin-top: 1em;
+  width: 100%;
+}
+
+///////////////////
+//dashboard styles
+/////////////////
+
+//////////////
+//form styles
+////////////
+
+#modal {
+  background-color: @secColor;
+  color: @lightColor;
+  margin-top: 10em;
+  padding: 0 0 4em 0;
+}
+
+.login_header {
+  padding-top: 0;
+}
+
+.login_header .modal_close {
+  float: right;
+  font-size: 2em;
+}
+
+.login_header .modal_close:hover {
+  cursor: pointer;
+}
+
+.form-horizontal {
+  padding: 0 5em;
+}
+
+.form-group {
+  max-width: 100%;
+}
+
+input, optgroup, select, textarea {
+  margin: 1em 0;
+}
+
+//overlay when login modal is open
+#lean_overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: none;
+}
+
+////////////////
+//footer styles
+//////////////
+
+footer {
+  background-color: @secColor;
+  color: @lightColor;
+  margin-top: 10em;
+  padding: 3em 0 2em 0;
+  text-align: left;
+}
+
+////////////////
+//media queries
+//////////////
