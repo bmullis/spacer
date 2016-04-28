@@ -94,7 +94,7 @@ h3 {
 }
 
 .is-scrolled {
-  background-color: @secColor;
+  background-color: @secColor !important;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -122,6 +122,32 @@ h3 {
   margin-right: 10px;
   margin-top: -5px;
   width: 30px;
+}
+
+.dropdown-menu {
+  background-color: transparent;
+  border: none;
+  text-align: right;
+  transition: all .2s ease-in-out;
+}
+
+.dropdown-menu > li > a {
+  color: @lightColor;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:active {
+  background-color: transparent;
+  color: @accColor;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: @lightColor;
 }
 
 ////////////////
@@ -157,6 +183,40 @@ h3 {
 ///////////////////
 //dashboard styles
 /////////////////
+
+
+.main {
+  color: @lightColor;
+  padding-top: 5em;
+}
+
+.main img {
+  border-radius: 50%;
+  margin: 1em 0 2em 0;
+  height: 200px;
+  width: 200px;
+}
+
+.sidebar {
+  padding-top: 11em;
+  text-align: right;
+}
+
+.sidebar a {
+  color: @accColor;
+}
+
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a:active {
+  background-color: @darkColor !important;
+  color: @accColor - #222;
+  text-decoration: underline !important;
+}
+
+.dashboard {
+  padding-top: 2em;
+}
 
 //////////////
 //form styles

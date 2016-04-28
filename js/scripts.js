@@ -33,9 +33,11 @@ $(window).scroll(function() {
 
     if ($(window).scrollTop() > 100) {
         $('.navbar-default').addClass('is-scrolled');
+        $('.dropdown-menu').addClass('is-scrolled');
     }
     else {
         $('.navbar-default').removeClass('is-scrolled');
+        $('.dropdown-menu').removeClass('is-scrolled');
     }
 
 });
@@ -44,9 +46,11 @@ $(window).load(function() {
 
     if ($(window).scrollTop() > 100) {
         $('.navbar-default').addClass('is-scrolled');
+        $('.dropdown-menu').addClass('is-scrolled');
     }
     else {
         $('.navbar-default').removeClass('is-scrolled');
+        $('.dropdown-menu').removeClass('is-scrolled');
     }
 
 });

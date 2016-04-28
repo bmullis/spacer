@@ -37,6 +37,6 @@ $status = json_decode($result);
 //close connection
 curl_close($ch);
 
-header ('location: ../index.php');
+header ('location: ../dashboard.php');
 
 ?>

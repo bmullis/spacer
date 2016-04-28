@@ -56,7 +56,7 @@ h3 {
   transition: all 0.2s ease-in-out;
 }
 .is-scrolled {
-  background-color: #385d48;
+  background-color: #385d48 !important;
 }
 .navbar-default .navbar-nav > li > a {
   color: #fafafa;
@@ -80,6 +80,28 @@ h3 {
   margin-top: -5px;
   width: 30px;
 }
+.dropdown-menu {
+  background-color: transparent;
+  border: none;
+  text-align: right;
+  transition: all 0.2s ease-in-out;
+}
+.dropdown-menu > li > a {
+  color: #fafafa;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:active {
+  background-color: transparent;
+  color: #af524d;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: #fafafa;
+}
 .jumbotron {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/header-image.jpg);
   background-repeat: no-repeat;
@@ -98,6 +120,33 @@ h3 {
 .example img {
   margin-top: 1em;
   width: 100%;
+}
+.main {
+  color: #fafafa;
+  padding-top: 5em;
+}
+.main img {
+  border-radius: 50%;
+  margin: 1em 0 2em 0;
+  height: 200px;
+  width: 200px;
+}
+.sidebar {
+  padding-top: 11em;
+  text-align: right;
+}
+.sidebar a {
+  color: #af524d;
+}
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a:active {
+  background-color: #050505 !important;
+  color: #8d302b;
+  text-decoration: underline !important;
+}
+.dashboard {
+  padding-top: 2em;
 }
 #modal {
   background-color: #385d48;

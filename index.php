@@ -1,6 +1,7 @@
 <?php
 $page_title = "Spacer | Find Space, Rent Space";
 $current_page = "index";
+session_start();
 ?>
 
 <?php include_once ('layout/header.php'); ?>

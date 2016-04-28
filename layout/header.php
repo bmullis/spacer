@@ -61,7 +61,7 @@
                     echo            $_SESSION['user'] . "<span class='caret'></span>\n";
                     echo "        </a>\n";
                     echo "        <ul class='dropdown-menu'>\n";
-                    echo "            <li><a href='home.php'>Dashboard</a></li>\n";
+                    echo "            <li><a href='dashboard.php'>Dashboard</a></li>\n";
                     echo "            <li><a href='includes/logout.php'>Logout</a></li>\n";
                     echo "        </ul>\n";
                     echo "    </li>\n";

@@ -31,7 +31,10 @@ curl_close($ch);
 $match = password_verify($password_input, $password);
 
 if ($match == TRUE) {
-    echo "good.";
+    $_SESSION['user'] = $result->email;
+    header ('location: ../dashboard.php');
 } else {
     echo "no good.";
 }
+
+?>
