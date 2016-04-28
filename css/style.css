@@ -127,6 +127,10 @@ select,
 textarea {
   margin: 1em 0;
 }
+#error {
+  margin-top: 2em;
+  text-align: center;
+}
 #lean_overlay {
   position: fixed;
   z-index: 100;

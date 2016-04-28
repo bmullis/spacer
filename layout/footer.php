@@ -16,9 +16,6 @@
 <!--jquery-->
 <script src="jquery/dist/jquery.min.js"></script>
 <script src="js/jquery.leanModal.min.js"></script>
-<script src="js/core.js"></script>
-<script src="js/crypto-js.js"></script>
-<script src="js/md5.js"></script>
 <!--bootstrap js-->
 <script src="bootstrap/dist/js/bootstrap.min.js"></script>
 <!--custom scripts-->
