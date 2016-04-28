@@ -36,8 +36,8 @@
                     </div>
                     <button class="btn btn-lg btn-primary" id="reg_submit" name="reg_submit" type="submit">Register</button>
                 </form>
+                <div id="error"></div>
             </section>
         </div>
     </div>
-    <div id="error"></div>
 </div>

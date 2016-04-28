@@ -13,8 +13,6 @@ $("#modal_trigger").leanModal({
 
 //login and register
 
-
-
 $('#reg_submit').click(function(event){
     var password = $('#reg_password').val();
     var conf_password = $('#conf_password').val();
