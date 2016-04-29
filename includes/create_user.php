@@ -9,7 +9,13 @@ $fields = array(
     '_id' => $_POST['email'],
     'email' => $_POST['email'],
     'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-    'type' => 'user',
+    'f_name' => '',
+    'l_name' => '',
+    'city' => '',
+    'state' => '',
+    'bio' => '',
+    'prof_pic' => '',
+    'type' => 'user'
 );
 
 //url-ify the data for the POST
@@ -37,6 +43,9 @@ $status = json_decode($result);
 //close connection
 curl_close($ch);
 
+$_SESSION['rev'] = $result->_rev;
+$_SESSION['user'] = $result->email;
+$_SESSION['password'] = $result->password;
 header ('location: ../dashboard.php');
 
 ?>

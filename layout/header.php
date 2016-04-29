@@ -52,12 +52,18 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a <?php if ($current_page == 'about') { echo "class='active'"; } ?> href="about.php">About</a></li>
-                <li><a <?php if ($current_page == 'index') { echo "class='active'"; } ?> href="search.php">Spaces</a></li>
-                <li><a <?php if ($current_page == 'index') { echo "class='active'"; } ?> href="contact.php">Contact</a></li>
+                <li><a <?php if ($current_page == 'search') { echo "class='active'"; } ?> href="search.php">Spaces</a></li>
+                <li><a <?php if ($current_page == 'contact') { echo "class='active'"; } ?> href="contact.php">Contact</a></li>
                 <?php if (isset($_SESSION['user'])) {
 
                     echo "    <li class='dropdown'>\n";
-                    echo "        <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>\n";
+                    echo "        <a href='#' class='dropdown-toggle";
+                        if ($current_page == 'profile') {
+                            echo " active'\n";
+                        } else {
+                            echo "'\n";
+                        }
+                    echo "data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>\n";
                     echo            $_SESSION['user'] . "<span class='caret'></span>\n";
                     echo "        </a>\n";
                     echo "        <ul class='dropdown-menu'>\n";

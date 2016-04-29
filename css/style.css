@@ -13,6 +13,9 @@
   line-height: 2em;
   text-decoration: underline;
 }
+html {
+  background-color: #385d48;
+}
 body {
   background-color: #050505;
   font-family: 'Lato', sans-serif;
@@ -83,6 +86,8 @@ h3 {
 .dropdown-menu {
   background-color: transparent;
   border: none;
+  box-shadow: none;
+  padding-bottom: 15px;
   text-align: right;
   transition: all 0.2s ease-in-out;
 }
@@ -101,6 +106,12 @@ h3 {
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: transparent;
   color: #fafafa;
+}
+.active {
+  color: #af524d !important;
+}
+.active:hover {
+  color: #8d302b;
 }
 .jumbotron {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/header-image.jpg);
@@ -131,16 +142,25 @@ h3 {
   height: 200px;
   width: 200px;
 }
+.main .space_pic {
+  border-radius: 0;
+  height: 300px;
+  width: 300px;
+}
 .sidebar {
   padding-top: 11em;
   text-align: right;
 }
-.sidebar a {
+.sidebar a,
+.main a {
   color: #af524d;
 }
 .sidebar a:hover,
 .sidebar a:focus,
-.sidebar a:active {
+.sidebar a:active,
+.main a:hover,
+.main a:focus,
+.main a:active {
   background-color: #050505 !important;
   color: #8d302b;
   text-decoration: underline !important;
@@ -152,7 +172,7 @@ h3 {
   background-color: #385d48;
   color: #fafafa;
   margin-top: 10em;
-  padding: 0 0 4em 0;
+  padding: 0 0 4em 4em;
 }
 .login_header {
   padding-top: 0;
@@ -165,10 +185,20 @@ h3 {
   cursor: pointer;
 }
 .form-horizontal {
-  padding: 0 5em;
+  padding: 0;
 }
 .form-group {
-  max-width: 100%;
+  max-width: 90%;
+}
+.main .form-group {
+  max-width: 60%;
+}
+form .cancel {
+  color: #fafafa !important;
+}
+form .cancel:hover {
+  background-color: #8d302b !important;
+  text-decoration: none !important;
 }
 input,
 optgroup,

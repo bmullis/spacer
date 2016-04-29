@@ -1,6 +1,6 @@
 <?php
-$page_title = "Spacer | Find Space, Rent Space";
-$current_page = "dashboard";
+$page_title = "Dashboard :: Spacer | Find Space, Rent Space";
+$current_page = "profile";
 session_start();
 ?>
 
@@ -11,7 +11,7 @@ session_start();
         <div class="row">
             <div class="col-md-9 main">
                 <h1>Dashboard</h1>
-                <img src="img/blank_user.png">
+                <img src="<?php echo $_SESSION['prof_pic']; ?>">
                 <p>Welcome to Spacer, <?php echo $_SESSION['user']; ?></p>
             </div>
             <?php include_once ('layout/sidebar.php'); ?>

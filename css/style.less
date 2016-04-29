@@ -49,6 +49,10 @@
 //global styles
 //////////////
 
+html {
+  background-color: @secColor;
+}
+
 body {
   background-color: @darkColor;
   font-family: @mainFont;
@@ -127,6 +131,8 @@ h3 {
 .dropdown-menu {
   background-color: transparent;
   border: none;
+  box-shadow: none;
+  padding-bottom: 15px;
   text-align: right;
   transition: all .2s ease-in-out;
 }
@@ -148,6 +154,14 @@ h3 {
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: transparent;
   color: @lightColor;
+}
+
+.active {
+  color: @accColor !important;
+}
+
+.active:hover {
+  color: @accColor - #222;
 }
 
 ////////////////
@@ -197,18 +211,28 @@ h3 {
   width: 200px;
 }
 
+.main .space_pic {
+  border-radius: 0;
+  height: 300px;
+  width: 300px;
+}
+
 .sidebar {
   padding-top: 11em;
   text-align: right;
 }
 
-.sidebar a {
+.sidebar a,
+.main a {
   color: @accColor;
 }
 
 .sidebar a:hover,
 .sidebar a:focus,
-.sidebar a:active {
+.sidebar a:active,
+.main a:hover,
+.main a:focus,
+.main a:active {
   background-color: @darkColor !important;
   color: @accColor - #222;
   text-decoration: underline !important;
@@ -226,7 +250,7 @@ h3 {
   background-color: @secColor;
   color: @lightColor;
   margin-top: 10em;
-  padding: 0 0 4em 0;
+  padding: 0 0 4em 4em;
 }
 
 .login_header {
@@ -243,11 +267,24 @@ h3 {
 }
 
 .form-horizontal {
-  padding: 0 5em;
+  padding: 0;
 }
 
 .form-group {
-  max-width: 100%;
+  max-width: 90%;
+}
+
+.main .form-group {
+  max-width: 60%;
+}
+
+form .cancel {
+  color: @lightColor !important;
+}
+
+form .cancel:hover {
+  background-color: @accColor - #222 !important;
+  text-decoration: none !important;
 }
 
 input, optgroup, select, textarea {
