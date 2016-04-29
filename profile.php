@@ -8,10 +8,14 @@ require_once "includes/functions.php";
 <?php include_once ('layout/header.php'); ?>
 
     <section class="dashboard">
-        <div class="container">
+        <div class="container main">
             <div class="row">
-                <div class="col-md-9 main">
+                <div class="col-md-12">
                     <h1>Profile</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-1">
                     <?php get_profile_info(); ?>
                     <a href="editprofile.php">[Edit Profile]</a>
                 </div>

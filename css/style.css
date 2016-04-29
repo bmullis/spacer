@@ -14,10 +14,11 @@
   text-decoration: underline;
 }
 html {
-  background-color: #385d48;
+  background-color: #050505;
 }
 body {
-  background-color: #050505;
+  background-color: #fafafa;
+  color: #050505 !important;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
 }
@@ -43,7 +44,7 @@ h3 {
   line-height: 1.5em;
 }
 .btn-primary {
-  background-color: #af524d;
+  background-color: #86ac2a;
   border: none;
 }
 .btn-primary:active,
@@ -51,15 +52,13 @@ h3 {
 .btn-primary:active:focus,
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #8d302b;
+  background-color: #648a08;
 }
 .navbar-default {
-  background-color: transparent;
+  background-color: #050505;
   border: none;
+  padding: .75em 0;
   transition: all 0.2s ease-in-out;
-}
-.is-scrolled {
-  background-color: #385d48 !important;
 }
 .navbar-default .navbar-nav > li > a {
   color: #fafafa;
@@ -67,15 +66,19 @@ h3 {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:active,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #af524d;
+  color: #86ac2a;
 }
 .navbar-default .navbar-brand {
-  color: #fafafa;
+  color: #86ac2a;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand:focus {
-  color: #af524d;
+  color: #86ac2a;
 }
 .navbar-default .navbar-brand img {
   display: inline;
@@ -84,7 +87,7 @@ h3 {
   width: 30px;
 }
 .dropdown-menu {
-  background-color: transparent;
+  background-color: #050505;
   border: none;
   box-shadow: none;
   padding-bottom: 15px;
@@ -98,7 +101,7 @@ h3 {
 .dropdown-menu > li > a:focus,
 .dropdown-menu > li > a:active {
   background-color: transparent;
-  color: #af524d;
+  color: #86ac2a;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -108,13 +111,13 @@ h3 {
   color: #fafafa;
 }
 .active {
-  color: #af524d !important;
+  color: #86ac2a !important;
 }
 .active:hover {
-  color: #8d302b;
+  color: #648a08;
 }
 .jumbotron {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/header-image.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/header-image.jpg);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -122,29 +125,43 @@ h3 {
   margin-bottom: 6em;
   padding: 7em 0 7em 0;
   text-align: center;
+  text-shadow: 0 0 10px #000;
 }
 .example {
-  color: #fafafa;
-  margin: 4em 0 4em 0;
+  color: #050505;
+  margin: 6em 0;
   text-align: center;
 }
 .example img {
+  border: 3px solid #86ac2a;
+  border-radius: 5px;
   margin-top: 1em;
   width: 100%;
 }
+.ribbon {
+  background-color: #86ac2a;
+  margin-top: 8em;
+  padding-bottom: .5em;
+  text-align: center;
+}
 .main {
-  color: #fafafa;
+  color: #050505;
+  margin-bottom: 8em;
   padding-top: 5em;
   text-align: center;
 }
+.main h1 {
+  text-align: left;
+}
 .main-form {
-  color: #fafafa;
+  color: #050505;
+  margin-bottom: 8em;
   padding-top: 5em;
   text-align: left;
 }
 .main img {
   border-radius: 0;
-  margin: 1em 0 2em 0;
+  margin: 1em 0 0 0;
   height: 300px;
   width: 300px;
 }
@@ -154,7 +171,7 @@ h3 {
   width: 300px;
 }
 .sidebar {
-  padding-top: 11em;
+  padding-top: 2em;
   text-align: right;
 }
 .sidebar a,
@@ -167,8 +184,8 @@ h3 {
 .main a:hover,
 .main a:focus,
 .main a:active {
-  background-color: #050505 !important;
-  color: #8d302b;
+  background-color: #fafafa !important;
+  color: #648a08;
   text-decoration: underline !important;
 }
 .dashboard {
@@ -204,7 +221,7 @@ form .cancel {
   color: #fafafa !important;
 }
 form .cancel:hover {
-  background-color: #8d302b !important;
+  background-color: #648a08 !important;
   text-decoration: none !important;
 }
 input,
@@ -228,9 +245,18 @@ textarea {
   display: none;
 }
 footer {
-  background-color: #385d48;
+  background-color: #050505;
   color: #fafafa;
-  margin-top: 10em;
-  padding: 3em 0 2em 0;
+  margin-top: 0;
+  padding: 6em 0 6em 0;
   text-align: left;
+}
+footer a {
+  color: #86ac2a;
+}
+footer a:hover,
+footer a:focus,
+footer a:active {
+  color: #648a08;
+  text-decoration: underline;
 }

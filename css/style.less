@@ -12,9 +12,9 @@
 
 @darkColor: #050505;
 @lightColor: #FAFAFA;
-@mainColor: #86AC2A;
+@accColor: #86AC2A;
 @secColor: #385D48;
-@accColor: #AF524D;
+@mainColor: #AF524D;
 
 ////////
 //fonts
@@ -50,11 +50,12 @@
 //////////////
 
 html {
-  background-color: @secColor;
+  background-color: @darkColor;
 }
 
 body {
-  background-color: @darkColor;
+  background-color: @lightColor;
+  color: @darkColor !important;
   font-family: @mainFont;
   font-size: 15px;
 }
@@ -92,13 +93,13 @@ h3 {
 ///////////
 
 .navbar-default {
-  background-color: transparent;
+  background-color: @darkColor;
   border: none;
+  padding: .75em 0;
   transition: all .2s ease-in-out;
 }
 
 .is-scrolled {
-  background-color: @secColor !important;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -112,7 +113,11 @@ h3 {
 }
 
 .navbar-default .navbar-brand {
-  color: @lightColor;
+  color: @accColor;
+  font-family: @headerFont;
+  font-size: 2em;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -129,7 +134,7 @@ h3 {
 }
 
 .dropdown-menu {
-  background-color: transparent;
+  background-color: @darkColor;
   border: none;
   box-shadow: none;
   padding-bottom: 15px;
@@ -169,7 +174,7 @@ h3 {
 //////////////
 
 .jumbotron {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/header-image.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/header-image.jpg);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -177,6 +182,7 @@ h3 {
   margin-bottom: 6em;
   padding: 7em 0 7em 0;
   text-align: center;
+  text-shadow: 0 0 10px #000;
 }
 
 //////////////
@@ -184,14 +190,23 @@ h3 {
 ////////////
 
 .example {
-  color: @lightColor;
-  margin: 4em 0 4em 0;
+  color: @darkColor;
+  margin: 6em 0;
   text-align: center;
 }
 
 .example img {
+  border: 3px solid @accColor;
+  border-radius: 5px;
   margin-top: 1em;
   width: 100%;
+}
+
+.ribbon {
+  background-color: @accColor;
+  margin-top: 8em;
+  padding-bottom: .5em;
+  text-align: center;
 }
 
 ///////////////////
@@ -200,20 +215,26 @@ h3 {
 
 
 .main {
-  color: @lightColor;
+  color: @darkColor;
+  margin-bottom: 8em;
   padding-top: 5em;
   text-align: center;
 }
 
+.main h1 {
+  text-align: left;
+}
+
 .main-form {
-  color: @lightColor;
+  color: @darkColor;
+  margin-bottom: 8em;
   padding-top: 5em;
   text-align: left;
 }
 
 .main img {
   border-radius: 0;
-  margin: 1em 0 2em 0;
+  margin: 1em 0 0 0;
   height: 300px;
   width: 300px;
 }
@@ -225,13 +246,13 @@ h3 {
 }
 
 .sidebar {
-  padding-top: 11em;
+  padding-top: 2em;
   text-align: right;
 }
 
 .sidebar a,
 .main a {
-  color: @accColor;
+  color: @mainColor;
 }
 
 .sidebar a:hover,
@@ -240,7 +261,7 @@ h3 {
 .main a:hover,
 .main a:focus,
 .main a:active {
-  background-color: @darkColor !important;
+  background-color: @lightColor !important;
   color: @accColor - #222;
   text-decoration: underline !important;
 }
@@ -321,11 +342,22 @@ input, optgroup, select, textarea {
 //////////////
 
 footer {
-  background-color: @secColor;
+  background-color: @darkColor;
   color: @lightColor;
-  margin-top: 10em;
-  padding: 3em 0 2em 0;
+  margin-top: 0;
+  padding: 6em 0 6em 0;
   text-align: left;
+}
+
+footer a {
+  color: @accColor;
+}
+
+footer a:hover,
+footer a:focus,
+footer a:active {
+  color: @accColor - #222;
+  text-decoration: underline;
 }
 
 ////////////////

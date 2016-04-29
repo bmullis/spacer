@@ -73,7 +73,7 @@
                     echo "    </li>\n";
                 } else {
 
-                    echo "      <li><a id='modal_trigger' href='#modal'><i class='fa fa-sign-in'></i> Login</a></li>\n";
+                    echo "      <li><a id='modal_trigger' href='#modal'><i class='fa fa-sign-in'></i> Sign In / <i class='fa fa-user'></i> Register</a></li>\n";
 
                 }
                 ?>

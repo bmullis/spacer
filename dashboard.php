@@ -7,18 +7,22 @@ session_start();
 <?php include_once ('layout/header.php'); ?>
 
 <section class="dashboard">
-    <div class="container">
+    <div class="container main">
         <div class="row">
-            <div class="col-md-9 main">
+            <div class="col-md-12">
                 <h1>Dashboard</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1">
                 <?php
                 if ($_SESSION['prof_pic'] == "") {
                     echo "<img src='img/blank_user.png'>\n";
                 } else {
-                    echo "<img src='" . $_SESSION['prof_pic'] . "'>'\n";
+                    echo "<img src='" . $_SESSION['prof_pic'] . "'>\n";
                 }
                 ?>
-                <p>Welcome to Spacer, <?php echo $_SESSION['user']; ?></p>
+                <h3>Welcome to Spacer, <?php echo $_SESSION['user']; ?></h3>
             </div>
             <?php include_once ('layout/sidebar.php'); ?>
         </div>
