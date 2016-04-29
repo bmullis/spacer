@@ -9,7 +9,7 @@ session_start();
     <section class="dashboard" xmlns="http://www.w3.org/1999/html">
         <div class="container">
             <div class="row">
-                <div class="col-md-9 main">
+                <div class="col-md-9 main-form">
                     <h1>Edit Profile</h1>
                     <form enctype="multipart/form-data" method="post" action="includes/update_user.php" class="form-horizontal">
                         <div class="form-group">

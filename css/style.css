@@ -135,12 +135,18 @@ h3 {
 .main {
   color: #fafafa;
   padding-top: 5em;
+  text-align: center;
+}
+.main-form {
+  color: #fafafa;
+  padding-top: 5em;
+  text-align: left;
 }
 .main img {
-  border-radius: 50%;
+  border-radius: 0;
   margin: 1em 0 2em 0;
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
 }
 .main .space_pic {
   border-radius: 0;
@@ -189,6 +195,7 @@ h3 {
 }
 .form-group {
   max-width: 90%;
+  text-align: left;
 }
 .main .form-group {
   max-width: 60%;

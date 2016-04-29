@@ -11,7 +11,13 @@ session_start();
         <div class="row">
             <div class="col-md-9 main">
                 <h1>Dashboard</h1>
-                <img src="<?php echo $_SESSION['prof_pic']; ?>">
+                <?php
+                if ($_SESSION['prof_pic'] == "") {
+                    echo "<img src='img/blank_user.png'>\n";
+                } else {
+                    echo "<img src='" . $_SESSION['prof_pic'] . "'>'\n";
+                }
+                ?>
                 <p>Welcome to Spacer, <?php echo $_SESSION['user']; ?></p>
             </div>
             <?php include_once ('layout/sidebar.php'); ?>
