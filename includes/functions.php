@@ -5,8 +5,8 @@ function show_spaces($view) {
     $spaceCount = 0;
     for ($i = 0; $i < $arrLength; $i++) {
         if ($view->rows[$i]->value->author == $_SESSION['user']) {
-            echo "<img class='space_pic' src='" . $view->rows[$i]->value->image . "'>'\n";
-            echo "<h3>" . $view->rows[$i]->value->title . "</h3>\n";
+            echo "<img class='space_pic' src='" . $view->rows[$i]->value->image . "'>\n";
+            echo "<h2>" . $view->rows[$i]->value->title . "</h2>\n";
             echo "<p>" . $view->rows[$i]->value->space_type . "</p>\n";
             echo "<p>" . $view->rows[$i]->value->desc . "</p>\n";
             echo "<p>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</p>\n";
@@ -25,9 +25,9 @@ function get_profile_info() {
         echo "<img src='" . $_SESSION['prof_pic'] . "'>\n";
     }
     if ($_SESSION['f_name'] == "") {
-    echo "<h3>Name: </h3>\n";
+    echo "<h2>Name: </h2>\n";
     } else {
-    echo "<h3>" . $_SESSION['f_name'] . " " . $_SESSION['l_name'] . "</h3>\n";
+    echo "<h2>" . $_SESSION['f_name'] . " " . $_SESSION['l_name'] . "</h2>\n";
     }
     if ($_SESSION['city'] == "") {
         echo "<p>City: </p>\n";

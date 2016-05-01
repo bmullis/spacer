@@ -10,7 +10,7 @@
 //colors
 ///////
 
-@darkColor: #050505;
+@darkColor: #000000;
 @lightColor: #FAFAFA;
 @accColor: #86AC2A;
 @secColor: #385D48;
@@ -50,7 +50,7 @@
 //////////////
 
 html {
-  background-color: @darkColor;
+  background-color: #000;
 }
 
 body {
@@ -94,7 +94,8 @@ h3 {
 
 .navbar-default {
   background-color: @darkColor;
-  border: none;
+  border-top: 4px solid @accColor;
+  border-bottom: none;
   padding: .75em 0;
   transition: all .2s ease-in-out;
 }
@@ -161,6 +162,12 @@ h3 {
   color: @lightColor;
 }
 
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border: none;
+  box-shadow: none;
+}
+
 .active {
   color: @accColor !important;
 }
@@ -180,7 +187,7 @@ h3 {
   background-size: cover;
   color: @lightColor;
   margin-bottom: 6em;
-  padding: 7em 0 7em 0;
+  padding: 9em 0 7em 0;
   text-align: center;
   text-shadow: 0 0 10px #000;
 }
@@ -196,7 +203,7 @@ h3 {
 }
 
 .example img {
-  border: 3px solid @accColor;
+  border: 1px solid @accColor;
   border-radius: 5px;
   margin-top: 1em;
   width: 100%;
@@ -216,18 +223,21 @@ h3 {
 
 .main {
   color: @darkColor;
-  margin-bottom: 8em;
   padding-top: 5em;
   text-align: center;
 }
 
-.main h1 {
+.main h1,
+.main-form h1 {
+  background-color: @accColor;
+  border: 2px solid @darkColor;
+  margin-bottom: 0;
+  padding: 10px 0 10px 20px;
   text-align: left;
 }
 
 .main-form {
   color: @darkColor;
-  margin-bottom: 8em;
   padding-top: 5em;
   text-align: left;
 }
@@ -245,19 +255,42 @@ h3 {
   width: 300px;
 }
 
+.console {
+  background-color: @lightColor;
+  border-left: 2px solid @darkColor;
+  border-right: 2px solid @darkColor;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 4em 0;
+}
+
 .sidebar {
   padding-top: 2em;
   text-align: right;
 }
 
-.sidebar a,
+.sidebar a {
+  border-right: 2px solid @lightColor;
+  color: @mainColor;
+}
+
 .main a {
   color: @mainColor;
 }
 
+.prof_active {
+  border-right: 2px solid @mainColor !important;
+  color: @accColor - #222 !important;
+}
+
 .sidebar a:hover,
 .sidebar a:focus,
-.sidebar a:active,
+.sidebar a:active {
+  background-color: @lightColor !important;
+  color: @accColor - #222;
+  text-decoration: underline !important;
+}
+
 .main a:hover,
 .main a:focus,
 .main a:active {
@@ -275,10 +308,14 @@ h3 {
 ////////////
 
 #modal {
-  background-color: @secColor;
+  background-color: @accColor;
   color: @lightColor;
   margin-top: 10em;
   padding: 0 0 4em 4em;
+}
+
+#modal .btn-primary {
+  background-color: @darkColor;
 }
 
 .login_header {
@@ -342,7 +379,10 @@ input, optgroup, select, textarea {
 //////////////
 
 footer {
-  background-color: @darkColor;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/header-image.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
   color: @lightColor;
   margin-top: 0;
   padding: 6em 0 6em 0;
@@ -351,6 +391,12 @@ footer {
 
 footer a {
   color: @accColor;
+}
+
+footer i {
+  font-size: 2.5em !important;
+  margin-bottom: .5em;
+  padding: 0 .25em;
 }
 
 footer a:hover,

@@ -1,6 +1,6 @@
 <?php
 $page_title = "Dashboard :: Spacer | Find Space, Rent Space";
-$current_page = "profile";
+$current_page = "dashboard";
 session_start();
 ?>
 
@@ -13,8 +13,8 @@ session_start();
                 <h1>Dashboard</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-1">
+        <div class="row console">
+            <div class="col-md-6 col-md-offset-3">
                 <?php
                 if ($_SESSION['prof_pic'] == "") {
                     echo "<img src='img/blank_user.png'>\n";
@@ -22,7 +22,7 @@ session_start();
                     echo "<img src='" . $_SESSION['prof_pic'] . "'>\n";
                 }
                 ?>
-                <h3>Welcome to Spacer, <?php echo $_SESSION['user']; ?></h3>
+                <h2>Welcome to Spacer, <?php echo $_SESSION['user']; ?></h2>
             </div>
             <?php include_once ('layout/sidebar.php'); ?>
         </div>

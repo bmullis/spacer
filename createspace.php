@@ -1,6 +1,6 @@
 <?php
 $page_title = "Create a Sapce :: Spacer | Find Space, Rent Space";
-$current_page = "profile";
+$current_page = "spaces";
 session_start();
 ?>
 
@@ -13,8 +13,8 @@ session_start();
                     <h1>Create a Space</h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-9">
+            <div class="row console">
+                <div class="col-md-6 col-md-offset-3">
                     <form enctype="multipart/form-data" method="post" action="includes/create_space.php" class="form-horizontal">
                         <div class="form-group">
                             <input type="text" id="space_name" name="space_name" class="form-control" placeholder="Name Your Space" required>

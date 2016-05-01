@@ -58,7 +58,7 @@
 
                     echo "    <li class='dropdown'>\n";
                     echo "        <a href='#' class='dropdown-toggle";
-                        if ($current_page == 'profile') {
+                        if ($current_page == 'profile' || $current_page == 'dashboard' || $current_page == 'spaces') {
                             echo " active'\n";
                         } else {
                             echo "'\n";

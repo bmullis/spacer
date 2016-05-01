@@ -14,8 +14,8 @@ require_once "includes/functions.php";
                     <h1>Profile</h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-1">
+            <div class="row console">
+                <div class="col-md-6 col-md-offset-3">
                     <?php get_profile_info(); ?>
                     <a href="editprofile.php">[Edit Profile]</a>
                 </div>
