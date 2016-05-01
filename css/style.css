@@ -206,18 +206,32 @@ h3 {
 .sidebar a:focus,
 .sidebar a:active {
   background-color: #fafafa !important;
-  color: #648a08;
+  color: #8d302b;
   text-decoration: underline !important;
 }
 .main a:hover,
 .main a:focus,
 .main a:active {
   background-color: #fafafa !important;
-  color: #648a08;
+  color: #8d302b;
   text-decoration: underline !important;
 }
 .dashboard {
   padding-top: 2em;
+}
+#search_submit {
+  margin-bottom: 3em;
+}
+#results {
+  margin: 4em 0;
+  text-align: center;
+}
+#results img {
+  margin: .25em 0 1em 0;
+  max-width: 400px;
+}
+.space_result {
+  margin-bottom: 6em;
 }
 #modal {
   background-color: #86ac2a;

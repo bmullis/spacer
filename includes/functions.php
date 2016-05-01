@@ -1,8 +1,9 @@
 <?php
 
 function show_spaces($view) {
-    $arrLength = count($view);
+    $arrLength = count($view->rows);
     $spaceCount = 0;
+
     for ($i = 0; $i < $arrLength; $i++) {
         if ($view->rows[$i]->value->author == $_SESSION['user']) {
             echo "<img class='space_pic' src='" . $view->rows[$i]->value->image . "'>\n";
@@ -12,9 +13,10 @@ function show_spaces($view) {
             echo "<p>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</p>\n";
             $spaceCount++;
         }
-        if ($spaceCount == 0) {
-            echo "<p>You haven't made any spaces yet.</p>\n";
-        }
+    }
+
+    if ($spaceCount == 0) {
+        echo "<p>You haven't made any spaces yet.</p>\n";
     }
 }
 

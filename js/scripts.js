@@ -54,3 +54,64 @@ $(window).load(function() {
     }
 
 });
+
+//search page
+
+//when user clicks search button run the ajax call to database
+
+$('#search_submit').click(function(event) {
+    var space_type = $('#space_type').val();
+    var space_city = $('#space_city').val();
+    var space_state = $('#space_state').val();
+    event.preventDefault();
+
+    $.ajax({
+        url: 'http://127.0.0.1:5984/spacer/_design/sofa/_view/all_spaces',
+        type: 'get',
+        dataType: 'jsonp',
+        success: function(data) {
+            console.log(data);
+            search_results(space_type, space_city, space_state, data);
+        }
+    });
+
+    scroll_to(this);
+
+});
+
+//get the results of the search and the ajax call
+
+function search_results(space_type, space_city, space_state, data) {
+    var results = [];
+    var i;
+
+    //determine if the result is within search parameters
+
+    for (i = 0; i < data.rows.length; i++) {
+        if (data.rows[0].value.city == space_city && data.rows[0].value.state == space_state) {
+            results.push(data.rows[i]);
+        }
+    }
+
+    //create the html for the results
+
+    $('#results').html('');
+
+    for (i = 0; i < results.length; i++) {
+        $('#results').append(
+            '<div class="space_result">' +
+            '<h2>' + results[i].value.title + '</h2>' +
+            '<img src=' + results[i].value.image + '>' +
+            '<p>' + results[i].value.desc + '</p>' +
+            '<a href="#" class="btn btn-primary">View Space</a>' +
+            '</div>'
+        );
+    }
+
+}
+
+function scroll_to(ele_clicked) {
+    $('html, body').animate({
+        scrollTop: $( $.attr(ele_clicked, 'href') ).offset().top - 100
+    },900);
+}

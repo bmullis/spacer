@@ -21,7 +21,7 @@ try {
     exit(1);
 }
 
-if (!isset($_POST['prof_pic'])) {
+if ($_FILES['prof_pic']['name'] == "") {
     $image_path = $_SESSION['prof_pic'];
 } else {
     move_uploaded_file($_FILES['prof_pic']['tmp_name'], "../img/profile_pics/" . $_FILES['prof_pic']['name']);
