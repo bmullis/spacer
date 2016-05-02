@@ -1,8 +1,10 @@
 <?php
-$page_title = "Profile :: Spacer | Find Space, Rent Space";
-$current_page = "spaces";
+$page_title = "Search :: Spacer | Find Space, Rent Space";
+$current_page = "search";
+$current_space = $_POST['current_space'];
 session_start();
 require_once ('includes/get_spaces.php');
+require_once ('includes/get_users.php');
 require_once ('includes/functions.php');
 ?>
 
@@ -12,13 +14,12 @@ require_once ('includes/functions.php');
         <div class="container main">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Spaces</h1>
+                    <h1>Search</h1>
                 </div>
             </div>
             <div class="row console">
                 <div class="col-md-6 col-md-offset-3">
-                    <?php show_spaces($view); ?>
-                </div>
+                    <?php show_space($users, $view, $current_space); ?></div>
                 <?php include_once ('layout/sidebar.php'); ?>
             </div>
         </div>

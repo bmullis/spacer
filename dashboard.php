@@ -14,7 +14,7 @@ session_start();
             </div>
         </div>
         <div class="row console">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3 text-center">
                 <?php
                 if ($_SESSION['prof_pic'] == "") {
                     echo "<img src='img/blank_user.png'>\n";
@@ -23,6 +23,8 @@ session_start();
                 }
                 ?>
                 <h2>Welcome to Spacer, <?php echo $_SESSION['user']; ?></h2>
+                <a href="search.php" class="btn btn-primary btn-lg">Find a Space</a> &nbsp;
+                <a href="spaces.php" class="btn btn-primary btn-lg">Host a Space</a>
             </div>
             <?php include_once ('layout/sidebar.php'); ?>
         </div>

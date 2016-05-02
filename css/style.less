@@ -75,9 +75,14 @@ h3 {
   .header;
 }
 
+img {
+  max-width: 100%;
+}
+
 .btn-primary {
   background-color: @accColor;
   border: none;
+  margin-bottom: .5em;
 }
 
 .btn-primary:active,
@@ -168,6 +173,10 @@ h3 {
   box-shadow: none;
 }
 
+.navbar-default hr {
+  margin: 10px 0 10px 0 !important
+}
+
 .active {
   color: @accColor !important;
 }
@@ -220,25 +229,21 @@ h3 {
 //dashboard styles
 /////////////////
 
-
-.main {
+.main,
+.main-form,
+.main-inbox {
   color: @darkColor;
   padding-top: 5em;
-  text-align: center;
+  text-align: left;
 }
 
 .main h1,
-.main-form h1 {
+.main-form h1,
+.main-inbox h1 {
   background-color: @accColor;
   border: 2px solid @darkColor;
   margin-bottom: 0;
   padding: 10px 0 10px 20px;
-  text-align: left;
-}
-
-.main-form {
-  color: @darkColor;
-  padding-top: 5em;
   text-align: left;
 }
 
@@ -271,32 +276,28 @@ h3 {
 
 .sidebar a {
   border-right: 2px solid @lightColor;
-  color: @mainColor;
+  color: @mainColor !important;
 }
 
 .main a {
-  color: @mainColor;
+  color: @lightColor;
 }
 
 .prof_active {
-  border-right: 2px solid @mainColor !important;
-  color: @accColor - #222 !important;
+  border-right: 2px solid @accColor !important;
 }
 
 .sidebar a:hover,
 .sidebar a:focus,
 .sidebar a:active {
   background-color: @lightColor !important;
-  color: @mainColor - #222;
-  text-decoration: underline !important;
+  color: @mainColor - #222 !important;
+  text-decoration: none !important;
 }
 
 .main a:hover,
 .main a:focus,
 .main a:active {
-  background-color: @lightColor !important;
-  color: @mainColor - #222;
-  text-decoration: underline !important;
 }
 
 .dashboard {
@@ -318,7 +319,17 @@ h3 {
 }
 
 .space_result {
-  margin-bottom: 6em;
+  margin-bottom: 5em;
+}
+
+.space_prof_result {
+  margin-bottom: 1em;
+}
+
+.owner_pic {
+  height: 100px !important;
+  width: 100px !important;
+  margin-top: 0 !important;
 }
 
 //////////////
@@ -373,6 +384,10 @@ form .cancel:hover {
 
 input, optgroup, select, textarea {
   margin: 1em 0;
+}
+
+.form-control:focus {
+  border: 1px solid #000;
 }
 
 #error {

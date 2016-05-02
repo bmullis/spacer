@@ -17,7 +17,7 @@ require_once "includes/functions.php";
             <div class="row console">
                 <div class="col-md-6 col-md-offset-3">
                     <?php get_profile_info(); ?>
-                    <a href="editprofile.php">[Edit Profile]</a>
+                    <a href="editprofile.php" class="btn btn-primary btn-lg">Edit Profile</a>
                 </div>
                 <?php include_once ('layout/sidebar.php'); ?>
             </div>

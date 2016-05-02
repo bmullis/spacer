@@ -52,13 +52,16 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a <?php if ($current_page == 'about') { echo "class='active'"; } ?> href="about.php">About</a></li>
-                <li><a <?php if ($current_page == 'search') { echo "class='active'"; } ?> href="search.php">Spaces</a></li>
                 <li><a <?php if ($current_page == 'contact') { echo "class='active'"; } ?> href="contact.php">Contact</a></li>
                 <?php if (isset($_SESSION['user'])) {
 
                     echo "    <li class='dropdown'>\n";
                     echo "        <a href='#' class='dropdown-toggle";
-                        if ($current_page == 'profile' || $current_page == 'dashboard' || $current_page == 'spaces') {
+                        if ($current_page == 'profile' ||
+                            $current_page == 'dashboard' ||
+                            $current_page == 'spaces' ||
+                            $current_page == 'search' ||
+                            $current_page == 'inbox') {
                             echo " active'\n";
                         } else {
                             echo "'\n";
@@ -67,12 +70,36 @@
                     echo            $_SESSION['user'] . "<span class='caret'></span>\n";
                     echo "        </a>\n";
                     echo "        <ul class='dropdown-menu'>\n";
-                    echo "            <li><a href='dashboard.php'>Dashboard</a></li>\n";
-                    echo "            <li><a href='includes/logout.php'>Logout</a></li>\n";
+                    echo "            <li><a class='";
+                    if ($current_page == 'dashboard') {
+                        echo "active";
+                    }
+                    echo "            ' href='dashboard.php'><i class='fa fa-dashboard'></i> &nbsp; Dashboard</a></li>\n";
+                    echo "            <li><a class='";
+                    if ($current_page == 'inbox') {
+                        echo "active";
+                    }
+                    echo "            ' href='inbox.php'><i class='fa fa-envelope'></i> &nbsp; Inbox</a></li>\n";
+                    echo "            <li><a class='";
+                    if ($current_page == 'profile') {
+                        echo "active";
+                    }
+                    echo "            ' href='profile.php'><i class='fa fa-user'></i> &nbsp; Profile</a></li>\n";
+                    echo "            <li><a class='";
+                    if ($current_page == 'spaces') {
+                        echo "active";
+                    }
+                    echo "            ' href='spaces.php'><i class='fa fa-home'></i> &nbsp; Your Spaces</a></li>\n";
+                    echo "            <li><a class='";
+                    if ($current_page == 'search') {
+                        echo "active";
+                    }
+                    echo "            ' href='search.php'><i class='fa fa-search'></i> &nbsp; Search</a></li>\n";
+                echo "                  <hr>\n";
+                    echo "            <li><a href='includes/logout.php'> <i class='fa fa-sign-out'></i> &nbsp; Logout</a></li>\n";
                     echo "        </ul>\n";
                     echo "    </li>\n";
                 } else {
-
                     echo "      <li><a id='modal_trigger' href='#modal'><i class='fa fa-sign-in'></i> Sign In / <i class='fa fa-user'></i> Register</a></li>\n";
 
                 }

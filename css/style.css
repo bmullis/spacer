@@ -43,9 +43,13 @@ h3 {
   letter-spacing: 2px;
   line-height: 1.5em;
 }
+img {
+  max-width: 100%;
+}
 .btn-primary {
   background-color: #86ac2a;
   border: none;
+  margin-bottom: .5em;
 }
 .btn-primary:active,
 .btn-primary:active:hover,
@@ -116,6 +120,9 @@ h3 {
   border: none;
   box-shadow: none;
 }
+.navbar-default hr {
+  margin: 10px 0 10px 0 !important;
+}
 .active {
   color: #86ac2a !important;
 }
@@ -150,22 +157,20 @@ h3 {
   padding-bottom: .5em;
   text-align: center;
 }
-.main {
+.main,
+.main-form,
+.main-inbox {
   color: #000000;
   padding-top: 5em;
-  text-align: center;
+  text-align: left;
 }
 .main h1,
-.main-form h1 {
+.main-form h1,
+.main-inbox h1 {
   background-color: #86ac2a;
   border: 2px solid #000000;
   margin-bottom: 0;
   padding: 10px 0 10px 20px;
-  text-align: left;
-}
-.main-form {
-  color: #000000;
-  padding-top: 5em;
   text-align: left;
 }
 .main img {
@@ -193,28 +198,20 @@ h3 {
 }
 .sidebar a {
   border-right: 2px solid #fafafa;
-  color: #af524d;
+  color: #af524d !important;
 }
 .main a {
-  color: #af524d;
+  color: #fafafa;
 }
 .prof_active {
-  border-right: 2px solid #af524d !important;
-  color: #648a08 !important;
+  border-right: 2px solid #86ac2a !important;
 }
 .sidebar a:hover,
 .sidebar a:focus,
 .sidebar a:active {
   background-color: #fafafa !important;
-  color: #8d302b;
-  text-decoration: underline !important;
-}
-.main a:hover,
-.main a:focus,
-.main a:active {
-  background-color: #fafafa !important;
-  color: #8d302b;
-  text-decoration: underline !important;
+  color: #8d302b !important;
+  text-decoration: none !important;
 }
 .dashboard {
   padding-top: 2em;
@@ -231,7 +228,15 @@ h3 {
   max-width: 400px;
 }
 .space_result {
-  margin-bottom: 6em;
+  margin-bottom: 5em;
+}
+.space_prof_result {
+  margin-bottom: 1em;
+}
+.owner_pic {
+  height: 100px !important;
+  width: 100px !important;
+  margin-top: 0 !important;
 }
 #modal {
   background-color: #86ac2a;
@@ -274,6 +279,9 @@ optgroup,
 select,
 textarea {
   margin: 1em 0;
+}
+.form-control:focus {
+  border: 1px solid #000;
 }
 #error {
   margin-top: 2em;
