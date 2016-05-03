@@ -15,15 +15,17 @@ session_start();
             </div>
             <div class="row console">
                 <div class="col-md-6 col-md-offset-3">
-                    <form enctype="multipart/form-data" method="post" action="includes/create_space.php" class="form-horizontal">
+                    <h2>Send Message To:</h2>
+                    <?php $the_owner = show_owner($users, $_SESSION['send_to']) ?>
+                    <img class="owner_pic" src="<?php echo $the_owner->value->prof_pic; ?>">
+                    <h3><?php echo $the_owner->value->f_name . " " . $the_owner->value->l_name; ?></h3>
+                    <form method="post" action="includes/create_message.php" class="form-horizontal">
                         <div class="form-group">
                             <input type="hidden" id="msg_to" name="msg_to" value="<?php echo $_SESSION['send_to']; ?>">
                             <input type="hidden" id="msg_space" name="msg_space" value="<?php echo $_SESSION['current_space']; ?>">
-                            <input type="hidden" id="msg_from" name="msg_space" value="<?php echo $_SESSION['current_space']; ?>">
-                            <input type="text" id="space_type" name="space_type" class="form-control" placeholder="What Type of Space Is It?" required>
-                            <input type="text" id="space_city" name="space_city" class="form-control" placeholder="City" required>
-                            <input type="text" id="space_state" name="space_state" class="form-control" placeholder="State" required>
-                            <textarea id="space_desc" name="space_desc" class="form-control" placeholder="Describe Your Space" required></textarea>
+                            <input type="hidden" id="msg_from" name="msg_from" value="<?php echo $_SESSION['user']; ?>">
+                            <input type="text" id="msg_subject" name="msg_subject" class="form-control" placeholder="Subject" required>
+                            <textarea id="msg_message" name="msg_message" class="form-control" placeholder="Message" required></textarea>
                         </div>
                         <button class="btn btn-lg btn-primary" id="msg_submit" name="msg_submit" type="submit">Send Message</button>
                         <a href="search.php" class="btn btn-lg btn-primary cancel">Cancel</a>

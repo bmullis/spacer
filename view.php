@@ -3,9 +3,6 @@ $page_title = "Search :: Spacer | Find Space, Rent Space";
 $current_page = "search";
 $current_space = $_POST['current_space'];
 session_start();
-require_once ('includes/get_spaces.php');
-require_once ('includes/get_users.php');
-require_once ('includes/functions.php');
 ?>
 
 <?php include_once ('layout/header.php'); ?>

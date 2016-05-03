@@ -2,8 +2,6 @@
 $page_title = "Profile :: Spacer | Find Space, Rent Space";
 $current_page = "spaces";
 session_start();
-require_once ('includes/get_spaces.php');
-require_once ('includes/functions.php');
 ?>
 
 <?php include_once ('layout/header.php'); ?>

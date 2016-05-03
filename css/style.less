@@ -105,6 +105,10 @@ img {
   transition: all .2s ease-in-out;
 }
 
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+  max-height: 100vh;
+}
+
 .is-scrolled {
 }
 
@@ -144,7 +148,6 @@ img {
   border: none;
   box-shadow: none;
   padding-bottom: 15px;
-  text-align: right;
   transition: all .2s ease-in-out;
 }
 
@@ -165,6 +168,16 @@ img {
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: transparent;
   color: @lightColor;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: @lightColor;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:active,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: @accColor;
 }
 
 .navbar-default .navbar-collapse,
@@ -242,6 +255,7 @@ img {
 .main-inbox h1 {
   background-color: @accColor;
   border: 2px solid @darkColor;
+  font-size: 1.75em;
   margin-bottom: 0;
   padding: 10px 0 10px 20px;
   text-align: left;
@@ -292,12 +306,22 @@ img {
 .sidebar a:active {
   background-color: @lightColor !important;
   color: @mainColor - #222 !important;
+  text-decoration: underline;
+}
+
+.no_under:hover {
   text-decoration: none !important;
 }
 
-.main a:hover,
-.main a:focus,
-.main a:active {
+table a {
+  color: @mainColor;
+}
+
+table a:hover,
+table a:active,
+table a:focus {
+  color: @mainColor - #222;
+  text-decoration: underline;
 }
 
 .dashboard {

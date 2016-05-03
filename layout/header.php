@@ -1,3 +1,11 @@
+<?php
+
+require_once ('includes/get_messages.php');
+require_once ('includes/get_spaces.php');
+require_once ('includes/get_users.php');
+require_once ('includes/functions.php');
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -56,7 +64,7 @@
                 <?php if (isset($_SESSION['user'])) {
 
                     echo "    <li class='dropdown'>\n";
-                    echo "        <a href='#' class='dropdown-toggle";
+                    echo "        <a href='#' class='text-md-right text-sm-left dropdown-toggle";
                         if ($current_page == 'profile' ||
                             $current_page == 'dashboard' ||
                             $current_page == 'spaces' ||

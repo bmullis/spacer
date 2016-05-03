@@ -1,6 +1,7 @@
 <?php
 $page_title = "Inbox :: Spacer | Find Space, Rent Space";
 $current_page = "inbox";
+$msg_id = $_GET['msg_id'];
 session_start();
 ?>
 
@@ -16,18 +17,8 @@ session_start();
             <div class="row console">
                 <div class="col-md-6 col-md-offset-3">
                     <?php $user_messages =  get_messages($messages); ?>
-                    <table class="table">
-                        <thead class="thead-inverse">
-                        <tr>
-                            <th>#</th>
-                            <th>Subject</th>
-                            <th>Sent Date</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <?php show_user_messages($user_messages); ?>
-                        </tbody>
-                    </table>
+                    <?php $current_msg = get_single_message($user_messages, $msg_id); ?>
+                    <?php var_dump($current_msg); ?>
                 </div>
                 <?php include_once ('layout/sidebar.php'); ?>
             </div>
