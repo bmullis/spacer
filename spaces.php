@@ -8,13 +8,10 @@ session_start();
 
     <section class="dashboard">
         <div class="container main">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Spaces</h1>
-                </div>
-            </div>
+
             <div class="row console">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-10">
+                    <h1>Your Spaces</h1>
                     <?php show_spaces($view); ?>
                 </div>
                 <?php include_once ('layout/sidebar.php'); ?>

@@ -8,14 +8,11 @@ session_start();
 
     <section class="dashboard">
         <div class="container main-inbox">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Inbox</h1>
-                </div>
-            </div>
+
             <div class="row console">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-10">
                     <?php $user_messages =  get_messages($messages); ?>
+                    <h1>Messages</h1>
                     <table class="table">
                         <thead class="thead-inverse">
                         <tr>

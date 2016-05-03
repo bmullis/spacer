@@ -62,7 +62,7 @@ img {
   background-color: #000000;
   border-top: 4px solid #86ac2a;
   border-bottom: none;
-  padding: .75em 0;
+  padding: .25em 0;
   transition: all 0.2s ease-in-out;
 }
 .navbar-fixed-top .navbar-collapse,
@@ -83,6 +83,7 @@ img {
   font-size: 2em;
   font-weight: 300;
   text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:active,
@@ -172,22 +173,27 @@ img {
 .main-form,
 .main-inbox {
   color: #000000;
-  padding-top: 5em;
-  text-align: left;
+  margin-top: 2em;
+  text-align: center;
 }
 .main h1,
 .main-form h1,
 .main-inbox h1 {
-  background-color: #86ac2a;
-  border: 2px solid #000000;
+  color: #000000;
   font-size: 1.75em;
   margin-bottom: 0;
-  padding: 10px 0 10px 20px;
+  padding: 1.25em 0 10px 20px;
   text-align: left;
+}
+.main-inbox {
+  padding-bottom: 10em;
+}
+.main h3 {
+  margin-top: 0;
 }
 .main img {
   border-radius: 0;
-  margin: 1em 0 0 0;
+  margin: 1em 0 1em 0;
   height: 300px;
   width: 300px;
 }
@@ -198,18 +204,21 @@ img {
 }
 .console {
   background-color: #fafafa;
-  border-left: 2px solid #000000;
-  border-right: 2px solid #000000;
   margin-left: 0;
   margin-right: 0;
-  padding: 4em 0;
+  padding: 0 0 5em 0;
 }
 .sidebar {
+  background-color: #000000;
   padding-top: 2em;
+  padding-bottom: 40em;
+  position: fixed;
+  right: 0;
   text-align: right;
+  z-index: 999;
 }
 .sidebar a {
-  border-right: 2px solid #fafafa;
+  border-right: 2px solid #000000;
   color: #af524d !important;
 }
 .main a {
@@ -228,6 +237,9 @@ img {
 .no_under:hover {
   text-decoration: none !important;
 }
+table {
+  margin: 2em auto;
+}
 table a {
   color: #af524d;
 }
@@ -236,6 +248,9 @@ table a:active,
 table a:focus {
   color: #8d302b;
   text-decoration: underline;
+}
+table td {
+  text-align: left;
 }
 .dashboard {
   padding-top: 2em;
@@ -263,13 +278,24 @@ table a:focus {
   margin-top: 0 !important;
 }
 #modal {
-  background-color: #86ac2a;
+  background-color: transparent;
   color: #fafafa;
   margin-top: 10em;
-  padding: 0 0 4em 4em;
 }
 #modal .btn-primary {
   background-color: #000000;
+}
+.login_header,
+.user_login,
+.user_register {
+  background-color: #86ac2a;
+}
+.user_login,
+.user_register {
+  height: 24em;
+}
+.user_login {
+  padding-left: 5em;
 }
 .login_header {
   padding-top: 0;
@@ -284,13 +310,6 @@ table a:focus {
 .form-horizontal {
   padding: 0;
 }
-.form-group {
-  max-width: 90%;
-  text-align: left;
-}
-.main .form-group {
-  max-width: 60%;
-}
 form .cancel {
   color: #fafafa !important;
 }
@@ -298,11 +317,23 @@ form .cancel:hover {
   background-color: #648a08 !important;
   text-decoration: none !important;
 }
+.user_login input,
+.user_register input {
+  margin-bottom: 1em;
+  width: 80%;
+}
 input,
 optgroup,
 select,
 textarea {
-  margin: 1em 0;
+  margin-bottom: 1em;
+}
+.console input,
+.console optgroup,
+.console select,
+.console textarea {
+  margin: 1em auto !important;
+  width: 50% !important;
 }
 .form-control:focus {
   border: 1px solid #000;
@@ -328,8 +359,9 @@ footer {
   background-size: cover;
   color: #fafafa;
   margin-top: 0;
-  padding: 6em 0 6em 0;
-  text-align: left;
+  padding: 3em 0 3em 0;
+  position: relative;
+  z-index: 9999;
 }
 footer a {
   color: #86ac2a;

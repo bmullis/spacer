@@ -8,13 +8,10 @@ session_start();
 
     <section class="dashboard" xmlns="http://www.w3.org/1999/html">
         <div class="container main-form">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Create a Space</h1>
-                </div>
-            </div>
+
             <div class="row console">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-10">
+                    <h1>Create a Space</h1>
                     <form enctype="multipart/form-data" method="post" action="includes/create_space.php" class="form-horizontal">
                         <div class="form-group">
                             <input type="text" id="space_name" name="space_name" class="form-control" placeholder="Name Your Space" required>

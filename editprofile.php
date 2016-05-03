@@ -8,13 +8,10 @@ session_start();
 
     <section class="dashboard" xmlns="http://www.w3.org/1999/html">
         <div class="container main-form">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Edit Profile</h1>
-                </div>
-            </div>
+
             <div class="row console">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-10">
+                    <h1>Edit Profile</h1>
                     <form enctype="multipart/form-data" method="post" action="includes/update_user.php" class="form-horizontal">
                         <div class="form-group">
                             <input type="text" value="<?php echo $_SESSION['f_name']; ?>" id="f_name" name="f_name" class="form-control" placeholder="First Name">

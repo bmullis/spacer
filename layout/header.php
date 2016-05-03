@@ -10,6 +10,7 @@ require_once ('includes/functions.php');
 <html lang="en">
 <head>
 
+    <!-- meta stuff -->
     <meta charset="utf-8">
     <meta name="author" content="Brian Mullis">
     <meta name="description" content="Spacer is a space sharing website.">
@@ -20,29 +21,29 @@ require_once ('includes/functions.php');
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- FOR MOBILE -->
+    <!-- mobile stuff -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msapplication-tap-highlight" content="no">
 
-    <!-- FAVICON -->
+    <!-- little cube thing favicon -->
     <link rel="shortcut icon" href="img/cube.png">
 
-    <!-- TITLE -->
+    <!-- title -->
     <title><?php echo $page_title; ?></title>
 
-    <!-- STYLES -->
+    <!-- stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <!-- FONTS -->
+    <!-- pretty letters -->
     <link href='https://fonts.googleapis.com/css?family=Raleway:300,400|Lato:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 </head>
 <body>
-<!-- Fixed navbar -->
+<!-- fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">

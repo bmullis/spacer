@@ -101,12 +101,15 @@ img {
   background-color: @darkColor;
   border-top: 4px solid @accColor;
   border-bottom: none;
-  padding: .75em 0;
+  padding: .25em 0;
   transition: all .2s ease-in-out;
 }
 
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
   max-height: 100vh;
+}
+
+.logo-is-scrolled {
 }
 
 .is-scrolled {
@@ -128,6 +131,7 @@ img {
   font-size: 2em;
   font-weight: 300;
   text-transform: uppercase;
+  transition: all .2s ease-in-out;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -246,24 +250,31 @@ img {
 .main-form,
 .main-inbox {
   color: @darkColor;
-  padding-top: 5em;
-  text-align: left;
+  margin-top: 2em;
+  text-align: center;
 }
 
 .main h1,
 .main-form h1,
 .main-inbox h1 {
-  background-color: @accColor;
-  border: 2px solid @darkColor;
+  color: @darkColor;
   font-size: 1.75em;
   margin-bottom: 0;
-  padding: 10px 0 10px 20px;
+  padding: 1.25em 0 10px 20px;
   text-align: left;
+}
+
+.main-inbox {
+  padding-bottom: 10em;
+}
+
+.main h3 {
+  margin-top: 0;
 }
 
 .main img {
   border-radius: 0;
-  margin: 1em 0 0 0;
+  margin: 1em 0 1em 0;
   height: 300px;
   width: 300px;
 }
@@ -276,20 +287,23 @@ img {
 
 .console {
   background-color: @lightColor;
-  border-left: 2px solid @darkColor;
-  border-right: 2px solid @darkColor;
   margin-left: 0;
   margin-right: 0;
-  padding: 4em 0;
+  padding: 0 0 5em 0;
 }
 
 .sidebar {
+  background-color: @darkColor;
   padding-top: 2em;
+  padding-bottom: 40em;
+  position: fixed;
+  right: 0;
   text-align: right;
+  z-index: 999;
 }
 
 .sidebar a {
-  border-right: 2px solid @lightColor;
+  border-right: 2px solid @darkColor;
   color: @mainColor !important;
 }
 
@@ -313,6 +327,10 @@ img {
   text-decoration: none !important;
 }
 
+table {
+  margin: 2em auto;
+}
+
 table a {
   color: @mainColor;
 }
@@ -322,6 +340,10 @@ table a:active,
 table a:focus {
   color: @mainColor - #222;
   text-decoration: underline;
+}
+
+table td {
+  text-align: left;
 }
 
 .dashboard {
@@ -361,14 +383,28 @@ table a:focus {
 ////////////
 
 #modal {
-  background-color: @accColor;
+  background-color: transparent;
   color: @lightColor;
   margin-top: 10em;
-  padding: 0 0 4em 4em;
 }
 
 #modal .btn-primary {
   background-color: @darkColor;
+}
+
+.login_header,
+.user_login,
+.user_register {
+  background-color: @accColor;
+}
+
+.user_login,
+.user_register {
+  height: 24em;
+}
+
+.user_login {
+  padding-left: 5em;
 }
 
 .login_header {
@@ -388,13 +424,7 @@ table a:focus {
   padding: 0;
 }
 
-.form-group {
-  max-width: 90%;
-  text-align: left;
-}
-
 .main .form-group {
-  max-width: 60%;
 }
 
 form .cancel {
@@ -406,8 +436,22 @@ form .cancel:hover {
   text-decoration: none !important;
 }
 
-input, optgroup, select, textarea {
-  margin: 1em 0;
+.user_login input,
+.user_register input {
+  margin-bottom: 1em;
+  width: 80%;
+}
+
+input,
+optgroup,
+select,
+textarea {
+  margin-bottom: 1em;
+}
+
+.console input, .console optgroup, .console select, .console textarea {
+  margin: 1em auto !important;
+  width: 50% !important;
 }
 
 .form-control:focus {
@@ -442,8 +486,9 @@ footer {
   background-size: cover;
   color: @lightColor;
   margin-top: 0;
-  padding: 6em 0 6em 0;
-  text-align: left;
+  padding: 3em 0 3em 0;
+  position: relative;
+  z-index: 9999;
 }
 
 footer a {

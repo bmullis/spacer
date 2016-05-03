@@ -1,6 +1,6 @@
 <?php $message_count = count(get_messages($messages)); ?>
 
-<div class="col-md-3 sidebar">
+<div class="col-md-2 sidebar">
     <ul class="nav nav-sidebar text-xs-center">
         <li><a <?php if ($current_page == 'dashboard') { echo "class='prof_active'"; } ?> href="dashboard.php">
                 <i class="fa fa-dashboard"></i><span class="no_under"> &nbsp; </span>Dashboard

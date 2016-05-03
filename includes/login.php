@@ -1,16 +1,13 @@
-
 <div id="modal" style="display:none;">
-    <div class="login_header container">
+    <div class="container">
         <div class="row">
-            <section class="col-md-12">
+            <section class="login_header col-md-8 col-md-offset-2">
                 <span class="modal_close"><i class="fa fa-times"></i></span>
             </section>
         </div>
-    <div></div>
 
-    <div class="login_body container">
         <div class="row">
-            <section class="user_login col-md-6">
+            <section class="user_login col-md-4 col-md-offset-2">
                 <form method="post" action="includes/get_user.php" class="form-horizontal">
                     <div class="form-group">
                         <h1>Sign In</h1>
@@ -26,7 +23,7 @@
                 </form>
             </section>
 
-            <section class="user_register col-md-6">
+            <section class="user_register col-md-4">
                 <form method="post" action="includes/create_user.php" class="form-horizontal">
                     <div class="form-group">
                         <h1>Register</h1>

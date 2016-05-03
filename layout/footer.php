@@ -12,8 +12,6 @@
     </div>
 </footer>
 
-<?php include_once ('includes/login.php'); ?>
-
 <!--jquery-->
 <script src="jquery/dist/jquery.min.js"></script>
 <script src="js/jquery.leanModal.min.js"></script>

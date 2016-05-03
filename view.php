@@ -9,13 +9,10 @@ session_start();
 
     <section class="dashboard">
         <div class="container main">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Search</h1>
-                </div>
-            </div>
+
             <div class="row console">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-10">
+                    <h1>View Space</h1>
                     <?php show_space($users, $view, $current_space); ?></div>
                 <?php include_once ('layout/sidebar.php'); ?>
             </div>

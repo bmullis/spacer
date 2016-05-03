@@ -31,13 +31,15 @@ $('#reg_submit').click(function(event){
 
 $(window).scroll(function() {
 
-    if ($(window).scrollTop() > 100) {
+    if ($(window).scrollTop() > 50) {
         $('.navbar-default').addClass('is-scrolled');
         $('.dropdown-menu').addClass('is-scrolled');
+        $('.navbar-brand').addClass('logo-is-scrolled');
     }
     else {
         $('.navbar-default').removeClass('is-scrolled');
         $('.dropdown-menu').removeClass('is-scrolled');
+        $('.navbar-brand').removeClass('logo-is-scrolled');
     }
 
 });

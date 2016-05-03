@@ -8,14 +8,11 @@ session_start();
 
     <section class="dashboard" xmlns="http://www.w3.org/1999/html">
         <div class="container main-form">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Send a Message</h1>
-                </div>
-            </div>
+
             <div class="row console">
-                <div class="col-md-6 col-md-offset-3">
-                    <h2>Send Message To:</h2>
+                <div class="col-md-10">
+                    <h1>Send Message</h1>
+                    <h3>Send Message To:</h3>
                     <?php $the_owner = show_owner($users, $_SESSION['send_to']) ?>
                     <img class="owner_pic" src="<?php echo $the_owner->value->prof_pic; ?>">
                     <h3><?php echo $the_owner->value->f_name . " " . $the_owner->value->l_name; ?></h3>

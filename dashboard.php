@@ -8,13 +8,10 @@ session_start();
 
 <section class="dashboard">
     <div class="container main">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Dashboard</h1>
-            </div>
-        </div>
+
         <div class="row console">
-            <div class="col-md-6 col-md-offset-3 text-center">
+            <div class="col-md-10">
+                <h1>Dashboard</h1>
                 <?php
                 if ($_SESSION['prof_pic'] == "") {
                     echo "<img src='img/blank_user.png'>\n";

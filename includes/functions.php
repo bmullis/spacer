@@ -33,8 +33,8 @@ function show_space($users, $view, $current_space) {
             $_SESSION['send_to'] = $view->rows[$i]->value->author;
             $_SESSION['current_space'] = $view->rows[$i]->value->title;
             echo "<div class='space_prof_result'>\n";
+            echo "<h2 class='text-center'>" . $view->rows[$i]->value->title . "</h2>\n";
             echo "<img class='space_pic' src='" . $view->rows[$i]->value->image . "'>\n";
-            echo "<h2>" . $view->rows[$i]->value->title . "</h2>\n";
             echo "<p>" . $view->rows[$i]->value->space_type . "</p>\n";
             echo "<p>" . $view->rows[$i]->value->desc . "</p>\n";
             echo "<p>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</p>\n";
