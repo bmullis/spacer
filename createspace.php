@@ -7,7 +7,7 @@ session_start();
 <?php include_once ('layout/header.php'); ?>
 
     <section class="dashboard" xmlns="http://www.w3.org/1999/html">
-        <div class="container main-form">
+        <div class="container-fluid main-form">
 
             <div class="row console">
                 <div class="col-md-10">
@@ -21,8 +21,8 @@ session_start();
                             <textarea id="space_desc" name="space_desc" class="form-control" placeholder="Describe Your Space" required></textarea>
                             <input type="file" id="space_image" name="space_image" required>
                         </div>
-                        <button class="btn btn-lg btn-primary" id="update_submit" name="update_submit" type="submit">Create This Space</button>
-                        <a href="spaces.php" class="btn btn-lg btn-primary cancel">Cancel</a>
+                        <button class="btn btn-primary" id="update_submit" name="update_submit" type="submit">Create This Space</button>
+                        <a href="spaces.php" class="btn btn-primary cancel">Cancel</a>
                     </form>
                 </div>
                 <?php include_once ('layout/sidebar.php'); ?>

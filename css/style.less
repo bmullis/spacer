@@ -72,6 +72,7 @@ h2 {
 
 h3 {
   font-size: 1.25em;
+  margin-top: 10px;
   .header;
 }
 
@@ -83,6 +84,7 @@ img {
   background-color: @accColor;
   border: none;
   margin-bottom: .5em;
+  transition: all .2s;
 }
 
 .btn-primary:active,
@@ -103,6 +105,7 @@ img {
   border-bottom: none;
   padding: .25em 0;
   transition: all .2s ease-in-out;
+  z-index: 90210;
 }
 
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
@@ -258,29 +261,22 @@ img {
 .main-form h1,
 .main-inbox h1 {
   color: @darkColor;
-  font-size: 1.75em;
-  margin-bottom: 0;
-  padding: 1.25em 0 10px 20px;
-  text-align: left;
-}
-
-.main-inbox {
-  padding-bottom: 10em;
-}
-
-.main h3 {
-  margin-top: 0;
+  font-size: 2em;
+  margin-bottom: .5em;
+  padding: .75em 0 10px;
+  text-align: center;
 }
 
 .main img {
   border-radius: 0;
-  margin: 1em 0 1em 0;
   height: 300px;
   width: 300px;
 }
 
-.main .space_pic {
+.main .space_pic,
+.main-form .space_pic {
   border-radius: 0;
+  margin-bottom: 1em;
   height: 300px;
   width: 300px;
 }
@@ -289,21 +285,32 @@ img {
   background-color: @lightColor;
   margin-left: 0;
   margin-right: 0;
-  padding: 0 0 5em 0;
+  min-height: 75vh;
+  position: relative;
+}
+
+.col-md-10 {
+  padding-bottom: 5em;
 }
 
 .sidebar {
   background-color: @darkColor;
-  padding-top: 2em;
-  padding-bottom: 40em;
-  position: fixed;
-  right: 0;
-  text-align: right;
-  z-index: 999;
+  border: 1px solid @accColor;
+  padding: 6em .25em 0 .25em;
+  text-align: left;
+  z-index: 717;
+}
+
+.nav-sidebar li a {
+  padding: .5em 2em .5em 2em;
+}
+
+.nav-sidebar hr {
+  border-top: 1px solid #aaa;
 }
 
 .sidebar a {
-  border-right: 2px solid @darkColor;
+  border-left: 2px solid @darkColor;
   color: @mainColor !important;
 }
 
@@ -312,14 +319,14 @@ img {
 }
 
 .prof_active {
-  border-right: 2px solid @accColor !important;
+  border-left: 2px solid @accColor !important;
 }
 
 .sidebar a:hover,
 .sidebar a:focus,
 .sidebar a:active {
-  background-color: @lightColor !important;
-  color: @mainColor - #222 !important;
+  background-color: @mainColor !important;
+  color: @lightColor !important;
   text-decoration: underline;
 }
 
@@ -329,6 +336,7 @@ img {
 
 table {
   margin: 2em auto;
+  width: 90% !important;
 }
 
 table a {
@@ -350,8 +358,16 @@ table td {
   padding-top: 2em;
 }
 
+.view_message {
+  padding: 0 15em 5em 15em;
+}
+
 #search_submit {
   margin-bottom: 3em;
+}
+
+#main_search {
+  margin-top: 3em;
 }
 
 #results {
@@ -373,9 +389,11 @@ table td {
 }
 
 .owner_pic {
+  border-radius: 50% !important;
   height: 100px !important;
   width: 100px !important;
   margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 //////////////
@@ -389,18 +407,18 @@ table td {
 }
 
 #modal .btn-primary {
-  background-color: @darkColor;
+  background-color: @accColor;
 }
 
 .login_header,
 .user_login,
 .user_register {
-  background-color: @accColor;
+  background-color: @darkColor + #333;
 }
 
 .user_login,
 .user_register {
-  height: 24em;
+  height: 22em;
 }
 
 .user_login {
@@ -424,7 +442,12 @@ table td {
   padding: 0;
 }
 
-.main .form-group {
+#modal .form-group {
+  margin-bottom: 0;
+}
+
+#modal .btn .btn-primary {
+  width: 80% !important;
 }
 
 form .cancel {
@@ -476,6 +499,23 @@ textarea {
 }
 
 ////////////////
+//widget styles
+//////////////
+
+.online_widget {
+  background-color: @accColor;
+  padding-bottom: 1em;
+}
+
+.online_widget h2 {
+  margin-top: 10px;
+}
+
+.online_widget img {
+  margin: 0 .5em;
+}
+
+////////////////
 //footer styles
 //////////////
 
@@ -485,10 +525,9 @@ footer {
   background-position: bottom;
   background-size: cover;
   color: @lightColor;
-  margin-top: 0;
   padding: 3em 0 3em 0;
   position: relative;
-  z-index: 9999;
+  z-index: 410;
 }
 
 footer a {
@@ -511,3 +550,74 @@ footer a:active {
 ////////////////
 //media queries
 //////////////
+
+@media screen and (max-width: 768px) {
+  .main h1,
+  .main-form h1,
+  .main-inbox h1 {
+    margin-bottom: 1em;
+    padding: 0;
+    text-align: center;
+  }
+  .main-inbox {
+    padding-bottom: 0;
+  }
+  .main img {
+    height: 200px;
+    width: 200px;
+  }
+  .main-form .space_pic,
+  .main .space_pic {
+    height: 200px;
+    width: 200px;
+  }
+  .col-md-10 {
+    padding-bottom: 1em;
+  }
+  .sidebar {
+    margin: 1em auto;
+    height: 320px;
+    position: relative;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: left;
+    width: 300px;
+    z-index: 1;
+  }
+  .console {
+    padding-bottom: 1em;
+  }
+  .console input, .console optgroup, .console select, .console textarea {
+    margin: 1em auto !important;
+    width: 90% !important;
+  }
+  .view_message {
+    padding: 0 1em 1em 1em;
+  }
+  .form-control {
+    margin: 1em auto;
+    width: 90%;
+  }
+  input, optgroup, select, textarea {
+    margin-bottom: 1em;
+    width: 90%;
+  }
+  #modal {
+    font-size: 1em;
+    margin-top: 4em;
+    text-align: center !important;
+  }
+  #modal input, button {
+    margin: 0;
+  }
+  #modal h1 {
+    font-size: 1em;
+    margin-top: 0;
+  }
+  .user_login,
+  .user_register {
+    height: auto;
+    text-align: center !important;
+    z-index: 8675309;
+  }
+}

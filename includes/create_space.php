@@ -31,4 +31,6 @@ try {
     echo "ERROR: ".$e->getMessage()." (".$e->getCode().")<br>\n";
 }
 
+header ('location: ../spaces.php');
+
 ?>

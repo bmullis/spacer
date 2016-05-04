@@ -7,12 +7,12 @@ session_start();
 <?php include_once ('layout/header.php'); ?>
 
     <section class="dashboard">
-        <div class="container main">
+        <div class="container-fluid main">
 
             <div class="row console">
                 <div class="col-md-10">
                     <h1>Your Spaces</h1>
-                    <?php show_spaces($view); ?>
+                    <?php show_spaces($view, $_SESSION['user']); ?>
                 </div>
                 <?php include_once ('layout/sidebar.php'); ?>
             </div>

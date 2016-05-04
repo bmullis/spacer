@@ -1,28 +1,72 @@
 <?php
 
-function show_spaces($view) {
+function show_spaces($view, $owner) {
     $arrLength = count($view->rows);
     $spaceCount = 0;
 
     for ($i = 0; $i < $arrLength; $i++) {
-        if ($view->rows[$i]->value->author == $_SESSION['user']) {
+        if ($view->rows[$i]->value->author == $owner) {
             echo "<div class='space_prof_result'>\n";
             echo "<img class='space_pic' src='" . $view->rows[$i]->value->image . "'>\n";
             echo "<h2>" . $view->rows[$i]->value->title . "</h2>\n";
             echo "<p>" . $view->rows[$i]->value->space_type . "</p>\n";
             echo "<p>" . $view->rows[$i]->value->desc . "</p>\n";
             echo "<p>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</p>\n";
-            echo "<a href='editspace.php' class='btn btn-primary btn-lg'>Edit This Space</a> &nbsp; \n";
-            echo "<a href='createspace.php' class='btn btn-primary btn-lg'>New Space</a>\n";
+            echo "<a href='editspace.php?space=" . $view->rows[$i]->value->title . "' class='btn btn-primary'>Edit This Space</a>\n";
+            echo "<a href='createspace.php' class='btn btn-primary'>New Space</a>\n";
             echo "</div>\n";
             $spaceCount++;
         }
     }
 
     if ($spaceCount == 0) {
+        echo "<br><br>\n";
         echo "<p>You haven't made any spaces yet.</p>\n";
-        echo "<a href='createspace.php' class='btn btn-primary btn-lg'>Host a Space</a>\n";
+        echo "<a href='createspace.php' class='btn btn-primary'>Host a Space</a>\n";
     }
+}
+
+function show_user_spaces($userspaces) {
+    $arrLength = count($userspaces);
+    $spaceCount = 0;
+
+    for ($i = 0; $i < $arrLength; $i++) {
+        echo "<h2>" . $userspaces[$i]->value->title . "</h2>\n";
+        echo "<img class='space_pic' src='" . $userspaces[$i]->value->image . "'>\n";
+        echo "<p>" . $userspaces[$i]->value->space_type . "</p>\n";
+        echo "<p>" . $userspaces[$i]->value->desc . "</p>\n";
+        echo "<p>" . $userspaces[$i]->value->city . ", " . $userspaces[$i]->value->state . "</p>\n";
+        $spaceCount++;
+    }
+
+    if ($spaceCount == 0) {
+       echo "<p>This user doesn't any spaces yet.</p>\n";
+    }
+}
+
+function get_user_spaces($view, $the_user) {
+    $arrLength = count($view->rows);
+    $user_spaces = [];
+
+    for ($i = 0; $i < $arrLength; $i++) {
+        if ($view->rows[$i]->value->author == $the_user) {
+            $user_spaces[] = $view->rows[$i];
+        }
+    }
+    return $user_spaces;
+}
+
+function get_single_space($view, $the_space) {
+    $arrLength = count($view->rows);
+    $key = "";
+
+    for ($i = 0; $i < $arrLength; $i++) {
+        if ($view->rows[$i]->value->title == $the_space) {
+            $key = $view->rows[$i];
+        }
+    }
+
+    return $key;
 }
 
 function show_space($users, $view, $current_space) {
@@ -40,12 +84,11 @@ function show_space($users, $view, $current_space) {
             echo "<p>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</p>\n";
             $the_owner = show_owner($users, $_SESSION['send_to']);
             echo "<h2>Owner:</h2>\n";
-            echo "<img class='owner_pic' src='" . $the_owner->value->prof_pic . "'>\n";
+            echo "<a href='view_profile.php?user=" . base64_encode($the_owner->value->email) . "'><img class='owner_pic' src='" . $the_owner->value->prof_pic . "'></a>\n";
             echo "<h3>" . $the_owner->value->f_name . " " . $the_owner->value->l_name . "</h3>\n";
             echo "<p>" . $the_owner->value->city . ", " . $the_owner->value->state . "</p>\n";
-            echo "<p>" . $the_owner->value->bio . "</p>\n";
-            echo "<a href='message.php' class='btn btn-primary btn-lg'>Contact Owner</a> &nbsp; \n";
-            echo "<a href='search.php' class='btn btn-primary btn-lg'>New Search</a>\n";
+            echo "<a href='message.php' class='btn btn-primary'>Contact User</a>\n";
+            echo "<a href='view_profile.php?user=" . base64_encode($the_owner->value->email) . "' class='btn btn-primary '>View User</a>\n";
             echo "</div>\n";
         }
     }
@@ -64,22 +107,22 @@ function show_owner($users, $owner) {
 }
 
 function get_profile_info() {
-    if ($_SESSION['prof_pic'] == "") {
+    if (!isset($_SESSION['f_name'])) {
+        echo "<h2>Name: </h2>\n";
+    } else {
+        echo "<h2>" . $_SESSION['f_name'] . " " . $_SESSION['l_name'] . "</h2>\n";
+    }
+    if (!isset($_SESSION['prof_pic'])) {
         echo "<img src='img/blank_user.png'>\n";
     } else {
         echo "<img src='" . $_SESSION['prof_pic'] . "'>\n";
     }
-    if ($_SESSION['f_name'] == "") {
-    echo "<h2>Name: </h2>\n";
+    if (!isset($_SESSION['city'])) {
+        echo "<h3>City: </h3>\n";
     } else {
-    echo "<h2>" . $_SESSION['f_name'] . " " . $_SESSION['l_name'] . "</h2>\n";
+        echo "<h3>" . $_SESSION['city'] . ", " . $_SESSION['state'] . "</h3>\n";
     }
-    if ($_SESSION['city'] == "") {
-        echo "<p>City: </p>\n";
-    } else {
-        echo "<p>" . $_SESSION['city'] . ", " . $_SESSION['state'] . "</p>\n";
-    }
-    if ($_SESSION['bio'] == "") {
+    if (!isset($_SESSION['bio'])) {
         echo "<p>Bio: </p>\n";
     } else {
         echo "<p>" . $_SESSION['bio'] . "</p>\n";
@@ -119,6 +162,16 @@ function get_single_message($user_messages, $msg_id) {
         }
     }
     return $current;
+}
+
+function get_online_users($online_users) {
+    $arrLength = count($online_users->rows);
+
+    for ($i = 0; $i < $arrLength; $i++) {
+        $online_list[] = $online_users->rows[$i]->value->user;
+    }
+
+    return $online_list;
 }
 
 ?>

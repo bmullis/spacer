@@ -17,5 +17,11 @@
         <li><a <?php if ($current_page == 'search') { echo "class='prof_active'"; } ?> href="search.php">
                 <i class="fa fa-search"></i><span class="no_under"> &nbsp; </span>Search
             </a></li>
+
+        <hr>
+
+        <li>
+            <a href='includes/logout.php'> <i class='fa fa-sign-out'></i> &nbsp; Logout</a>
+        </li>
     </ul>
 </div>

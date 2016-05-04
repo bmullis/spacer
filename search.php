@@ -7,8 +7,7 @@ session_start();
 <?php include_once ('layout/header.php'); ?>
 
     <section class="dashboard" xmlns="http://www.w3.org/1999/html">
-        <div class="container main-form">
-
+        <div class="container-fluid main-form">
             <div class="row console">
                 <div class="col-md-10">
                     <h1>Search For Space</h1>
@@ -25,7 +24,7 @@ session_start();
                             <input type="text" id="space_city" class="form-control" placeholder="City">
                             <input type="text" id="space_state" class="form-control" placeholder="State">
                         </div>
-                        <button href="#results" class="btn btn-lg btn-primary" id="search_submit" type="submit">Search For a Space</button>
+                        <button href="#results" class="btn btn-primary" id="search_submit" type="submit">Search For a Space</button>
                     </form>
                     <div id="results">
 

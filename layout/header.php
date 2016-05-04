@@ -3,6 +3,7 @@
 require_once ('includes/get_messages.php');
 require_once ('includes/get_spaces.php');
 require_once ('includes/get_users.php');
+require_once ('includes/get_online_users.php');
 require_once ('includes/functions.php');
 
 ?>
@@ -45,7 +46,7 @@ require_once ('includes/functions.php');
 <body>
 <!-- fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>

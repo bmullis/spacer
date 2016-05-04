@@ -2,6 +2,7 @@
 //main scripts file
 
 
+
 //pop up window for login and registration
 
 $("#modal_trigger").leanModal({
@@ -46,6 +47,8 @@ $(window).scroll(function() {
 
 $(window).load(function() {
 
+    sidebar_height();
+
     if ($(window).scrollTop() > 100) {
         $('.navbar-default').addClass('is-scrolled');
         $('.dropdown-menu').addClass('is-scrolled');
@@ -56,6 +59,18 @@ $(window).load(function() {
     }
 
 });
+
+//make sidebar same height as console window
+
+function sidebar_height() {
+    if ($(window).width() > 768) {
+        var console = $('.console').height();
+        var sidebar = $('.sidebar').height();
+            if (console > sidebar) {
+                $('.sidebar').css({'min-height': console});
+            }
+    }
+}
 
 //search page
 
@@ -103,15 +118,17 @@ function search_results(space_type, space_city, space_state, data) {
         $('#results').append(
             '<div class="space_result">' +
             '<h2>' + results[i].value.title + '</h2>' +
-            '<img src=' + results[i].value.image + '>' +
+            '<img class="space_pic" src="' + results[i].value.image + '">' +
             '<p>' + results[i].value.desc + '</p>' +
             '<form action="view.php" method="post">' +
             '<input type="hidden" name="current_space" value="' + results[i].value.title + '">' +
-            '<button class="btn btn-primary btn-lg">View Space</button>' +
+            '<button class="btn btn-primary">View Space</button>' +
             '</form>' +
             '</div>'
         );
     }
+
+    sidebar_height();
 
 }
 

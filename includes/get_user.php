@@ -35,6 +35,9 @@ if ($match == TRUE) {
     $_SESSION['state'] = $doc->state;
     $_SESSION['bio'] = $doc->bio;
     $_SESSION['prof_pic'] = $doc->prof_pic;
+
+    require_once ('add_online.php');
+
     header ('location: ../dashboard.php');
 } else {
     echo "no good.";
