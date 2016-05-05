@@ -20,36 +20,44 @@ session_start();
                                     } else {
                                         echo "";
                                     }
-                                ?>" id="f_name" name="f_name" class="form-control" placeholder="First Name">
+                                ?>" id="f_name" name="f_name" class="form-control" placeholder="First Name" required>
                             <input type="text" value="<?php
                                 if (isset($_SESSION['l_name'])) {
                                     echo $_SESSION['l_name'];
                                 } else {
                                     echo "";
                                 }
-                            ?>" id="l_name" name="l_name" class="form-control" placeholder="Last Name">
+                            ?>" id="l_name" name="l_name" class="form-control" placeholder="Last Name" required>
                             <input type="text" value="<?php
                             if (isset($_SESSION['city'])) {
                                 echo $_SESSION['city'];
                             } else {
                                 echo "";
                             }
-                            ?>" id="city" name="city" class="form-control" placeholder="City">
+                            ?>" id="city" name="city" class="form-control" placeholder="City" required>
                             <input type="text" value="<?php
                             if (isset($_SESSION['state'])) {
                                 echo $_SESSION['state'];
                             } else {
                                 echo "";
                             }
-                            ?>" id="state" name="state" class="form-control" placeholder="State">
-                            <textarea id="bio" name="bio" class="form-control" placeholder="Bio"><?php
+                            ?>" id="state" name="state" class="form-control" placeholder="State" required>
+                            <textarea id="bio" name="bio" class="form-control" placeholder="Bio" required><?php
                             if (isset($_SESSION['bio'])) {
                                 echo $_SESSION['bio'];
                             } else {
                                 echo "";
                             }
                             ?></textarea>
-                            <input type="file" id="prof_pic" name="prof_pic">
+                            <?php
+                            if (!isset($_SESSION['prof_pic'])) {
+                                echo "Choose a Profile Picture: <input type='file' id='prof_pic' name='prof_pic' required>\n";
+                            } else {
+                                echo "<p>Current Profile Picture: </p>\n";
+                                echo "<img class='owner_pic' src='" . $_SESSION['prof_pic'] . "'><br><br>\n";
+                                echo "Change Profile Picture: <input type='file' id='prof_pic' name='prof_pic'>\n";
+                            }
+                            ?>
                         </div>
                         <button class="btn btn-primary" id="update_submit" name="update_submit" type="submit">Update Profile</button>
                         <a href="profile.php" class="btn btn-primary cancel">Cancel</a>

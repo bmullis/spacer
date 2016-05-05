@@ -21,7 +21,7 @@ session_start();
                     <input type="text" id="cont_subject" name="cont_subject" class="form-control" placeholder="Message Subject" required>
                     <textarea id="cont_message" name="cont_message" class="form-control" placeholder="Write Your Message Here" required></textarea>
                 </div>
-                <button class="btn btn-lg btn-primary" id="message_submit" name="message_submit" type="submit">
+                <button class="btn btn-primary" id="message_submit" name="message_submit" type="submit">
                     <i class="fa fa-send"></i> &nbsp; Send
                 </button>
             </form>
@@ -37,5 +37,7 @@ session_start();
         </div>
     </div>
 </section>
+
+<?php include_once ('includes/login.php'); ?>
 
 <?php include_once ('layout/footer.php'); ?>

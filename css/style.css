@@ -189,6 +189,13 @@ img {
   padding: 4% 0 10px;
   text-align: center;
 }
+.main p,
+.main-form p,
+.main-inbox p {
+  line-height: 1.75em;
+  margin: 0 auto 1em auto;
+  max-width: 60%;
+}
 .main img {
   border-radius: 0;
   height: 300px;
@@ -355,6 +362,9 @@ textarea {
   margin: 1em auto !important;
   width: 50% !important;
 }
+.console input[type=file] {
+  width: 200px !important;
+}
 .form-control:focus {
   border: 1px solid #000;
 }
@@ -460,6 +470,9 @@ footer a:active {
   }
   .view_message {
     padding: 0 1em 1em 1em;
+  }
+  table {
+    width: 100% !important;
   }
   .form-control {
     margin: 1em auto;

@@ -61,4 +61,6 @@ session_start();
     </div>
 </section>
 
+<?php include_once ('includes/login.php'); ?>
+
 <?php include_once ('layout/footer.php'); ?>
