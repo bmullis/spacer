@@ -1,7 +1,7 @@
     <div class="container-fluid online_widget">
         <div class="row">
-            <div class="col-md-6 text-center">
-                <h2>Online Users:</h2>
+            <div class="col-md-12 text-center">
+                <h3>Online Users:</h3>
                 <?php $online = get_online_users($online_users); ?>
                 <?php
                     for ($i = 0; $i < count($online); $i++) {

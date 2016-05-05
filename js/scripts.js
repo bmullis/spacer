@@ -105,7 +105,7 @@ function search_results(space_type, space_city, space_state, data) {
     //determine if the result is within search parameters
 
     for (i = 0; i < data.rows.length; i++) {
-        if (data.rows[0].value.city == space_city && data.rows[0].value.state == space_state) {
+        if (data.rows[i].value.city == space_city && data.rows[i].value.state == space_state) {
             results.push(data.rows[i]);
         }
     }

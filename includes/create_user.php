@@ -18,13 +18,16 @@ $new_doc->l_name = '';
 $new_doc->city = '';
 $new_doc->state = '';
 $new_doc->bio = '';
-$new_doc->prof_pic = '';
+$new_doc->prof_pic = 'img/blank_user.png';
 $new_doc->type = 'user';
+
 try {
     $response = $client->storeDoc($new_doc);
 } catch (Exception $e) {
     echo "ERROR: ".$e->getMessage()." (".$e->getCode().")<br>\n";
 }
+
+require_once ('add_online.php');
 
 $_SESSION['user'] = $_POST['email'];
 header ('location: ../dashboard.php');

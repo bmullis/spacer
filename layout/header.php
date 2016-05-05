@@ -91,16 +91,6 @@ require_once ('includes/functions.php');
                     }
                     echo "            ' href='inbox.php'><i class='fa fa-envelope'></i> &nbsp; Inbox</a></li>\n";
                     echo "            <li><a class='";
-                    if ($current_page == 'profile') {
-                        echo "active";
-                    }
-                    echo "            ' href='profile.php'><i class='fa fa-user'></i> &nbsp; Profile</a></li>\n";
-                    echo "            <li><a class='";
-                    if ($current_page == 'spaces') {
-                        echo "active";
-                    }
-                    echo "            ' href='spaces.php'><i class='fa fa-home'></i> &nbsp; Your Spaces</a></li>\n";
-                    echo "            <li><a class='";
                     if ($current_page == 'search') {
                         echo "active";
                     }

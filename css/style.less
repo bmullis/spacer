@@ -255,6 +255,7 @@ img {
   color: @darkColor;
   margin-top: 2em;
   text-align: center;
+  padding-right: 0;
 }
 
 .main h1,
@@ -263,7 +264,7 @@ img {
   color: @darkColor;
   font-size: 2em;
   margin-bottom: .5em;
-  padding: .75em 0 10px;
+  padding: 4% 0 10px;
   text-align: center;
 }
 
@@ -285,7 +286,7 @@ img {
   background-color: @lightColor;
   margin-left: 0;
   margin-right: 0;
-  min-height: 75vh;
+  min-height: 80vh;
   position: relative;
 }
 
@@ -296,7 +297,7 @@ img {
 .sidebar {
   background-color: @darkColor;
   border: 1px solid @accColor;
-  padding: 6em .25em 0 .25em;
+  padding: 8em .25em 0 .25em;
   text-align: left;
   z-index: 717;
 }
@@ -306,7 +307,8 @@ img {
 }
 
 .nav-sidebar hr {
-  border-top: 1px solid #aaa;
+  border-top: 1px solid #444;
+  width: 80%;
 }
 
 .sidebar a {
@@ -356,10 +358,6 @@ table td {
 
 .dashboard {
   padding-top: 2em;
-}
-
-.view_message {
-  padding: 0 15em 5em 15em;
 }
 
 #search_submit {
@@ -507,12 +505,14 @@ textarea {
   padding-bottom: 1em;
 }
 
-.online_widget h2 {
+.online_widget h3 {
   margin-top: 10px;
 }
 
 .online_widget img {
   margin: 0 .5em;
+  height: 50px !important;
+  width: 50px !important;
 }
 
 ////////////////
@@ -552,9 +552,15 @@ footer a:active {
 //////////////
 
 @media screen and (max-width: 768px) {
+  .main,
+  .main-form,
+  .main-inbox {
+    padding-right: 15px;
+  }
   .main h1,
   .main-form h1,
   .main-inbox h1 {
+    margin-top: 1em;
     margin-bottom: 1em;
     padding: 0;
     text-align: center;
@@ -563,8 +569,8 @@ footer a:active {
     padding-bottom: 0;
   }
   .main img {
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
   }
   .main-form .space_pic,
   .main .space_pic {
@@ -582,6 +588,7 @@ footer a:active {
     padding-bottom: 2em;
     text-align: left;
     width: 300px;
+    max-width: 100%;
     z-index: 1;
   }
   .console {
