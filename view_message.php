@@ -3,6 +3,9 @@ $page_title = "Inbox :: Spacer | Find Space, Rent Space";
 $current_page = "inbox";
 $msg_id = $_GET['msg_id'];
 session_start();
+if (!isset($_SESSION['user'])) {
+    header('location: index.php');
+}
 ?>
 
 <?php include_once ('layout/header.php'); ?>

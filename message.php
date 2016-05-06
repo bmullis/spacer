@@ -5,6 +5,10 @@ if (isset($_GET['msg_id'])) {
     $msg_id = $_GET['msg_id'];
 }
 session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('location: index.php');
+}
 ?>
 
 <?php include_once ('layout/header.php'); ?>

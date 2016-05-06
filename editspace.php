@@ -5,6 +5,10 @@ require_once ('includes/functions.php');
 require_once ('includes/get_spaces.php');
 
 session_start();
+if (!isset($_SESSION['user'])) {
+    header('location: index.php');
+}
+
 $this_space = $_GET['space'];
 $space_row = get_single_space($view, $this_space);
 ?>

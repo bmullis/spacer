@@ -3,6 +3,9 @@ $page_title = "User Profile :: Spacer | Find Space, Rent Space";
 $current_page = "user_profile";
 $user = base64_decode($_GET['user']);
 session_start();
+if (!isset($_SESSION['user'])) {
+    header('location: index.php');
+}
 $_SESSION['send_to'] = $user;
 ?>
 

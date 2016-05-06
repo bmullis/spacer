@@ -78,17 +78,18 @@ function sidebar_height() {
 
 $('#search_submit').click(function(event) {
     var space_type = $('#space_type').val();
-    var space_city = $('#space_city').val();
-    var space_state = $('#space_state').val();
+    var space_city = $('#space_city').val().charAt(0).toUpperCase() + $('#space_city').val().slice(1).toLowerCase();
+    var trimmed_city = space_city.replace(/\s+$/, '');
+    var space_state = $('#space_state').val().toUpperCase();
     event.preventDefault();
 
     $.ajax({
-        url: 'http://127.0.0.1:5984/spacer/_design/sofa/_view/all_spaces',
+        url: 'includes/spaces_db.php',
         type: 'get',
-        dataType: 'jsonp',
+        dataType: 'json',
         success: function(data) {
             console.log(data);
-            search_results(space_type, space_city, space_state, data);
+            search_results(space_type, trimmed_city, space_state, data);
         }
     });
 
@@ -131,6 +132,22 @@ function search_results(space_type, space_city, space_state, data) {
     sidebar_height();
 
 }
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (event) {
+            $('#prev_pic').attr('src', event.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#prof_pic").change(function(){
+    readURL(this);
+});
 
 function scroll_to(ele_clicked) {
     $('html, body').animate({

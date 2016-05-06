@@ -2,6 +2,9 @@
 $page_title = "Edit Profile :: Spacer | Find Space, Rent Space";
 $current_page = "profile";
 session_start();
+if (!isset($_SESSION['user'])) {
+    header('location: index.php');
+}
 ?>
 
 <?php include_once ('layout/header.php'); ?>
@@ -54,7 +57,7 @@ session_start();
                                 echo "Choose a Profile Picture: <input type='file' id='prof_pic' name='prof_pic' required>\n";
                             } else {
                                 echo "<p>Current Profile Picture: </p>\n";
-                                echo "<img class='owner_pic' src='" . $_SESSION['prof_pic'] . "'><br><br>\n";
+                                echo "<img id='prev_pic' class='owner_pic' src='" . $_SESSION['prof_pic'] . "'><br><br>\n";
                                 echo "Change Profile Picture: <input type='file' id='prof_pic' name='prof_pic'>\n";
                             }
                             ?>

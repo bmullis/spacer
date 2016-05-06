@@ -3,6 +3,9 @@ $page_title = "Search :: Spacer | Find Space, Rent Space";
 $current_page = "search";
 $current_space = $_POST['current_space'];
 session_start();
+if (!isset($_SESSION['user'])) {
+    header('location: index.php');
+}
 ?>
 
 <?php include_once ('layout/header.php'); ?>

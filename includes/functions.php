@@ -7,11 +7,11 @@ function show_spaces($view, $owner) {
     for ($i = 0; $i < $arrLength; $i++) {
         if ($view->rows[$i]->value->author == $owner) {
             echo "<div class='space_prof_result'>\n";
-            echo "<img class='space_pic' src='" . $view->rows[$i]->value->image . "'>\n";
             echo "<h2>" . $view->rows[$i]->value->title . "</h2>\n";
-            echo "<p>" . $view->rows[$i]->value->space_type . "</p>\n";
+            echo "<img class='space_pic' src='" . $view->rows[$i]->value->image . "'>\n";
+            echo "<h3>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</h3>\n";
             echo "<p>" . $view->rows[$i]->value->desc . "</p>\n";
-            echo "<p>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</p>\n";
+            echo "<p>" . $view->rows[$i]->value->space_type . "</p>\n";
             echo "<a href='editspace.php?space=" . $view->rows[$i]->value->title . "' class='btn btn-primary'>Edit This Space</a>\n";
             echo "<a href='createspace.php' class='btn btn-primary'>New Space</a>\n";
             echo "</div>\n";
@@ -33,9 +33,9 @@ function show_user_spaces($userspaces) {
     for ($i = 0; $i < $arrLength; $i++) {
         echo "<h2>" . $userspaces[$i]->value->title . "</h2>\n";
         echo "<img class='space_pic' src='" . $userspaces[$i]->value->image . "'>\n";
-        echo "<p>" . $userspaces[$i]->value->space_type . "</p>\n";
+        echo "<h3>" . $userspaces[$i]->value->city . ", " . $userspaces[$i]->value->state . "</h3>\n";
         echo "<p>" . $userspaces[$i]->value->desc . "</p>\n";
-        echo "<p>" . $userspaces[$i]->value->city . ", " . $userspaces[$i]->value->state . "</p>\n";
+        echo "<p>" . $userspaces[$i]->value->space_type . "</p>\n";
         $spaceCount++;
     }
 
@@ -79,9 +79,9 @@ function show_space($users, $view, $current_space) {
             echo "<div class='space_prof_result'>\n";
             echo "<h2 class='text-center'>" . $view->rows[$i]->value->title . "</h2>\n";
             echo "<img class='space_pic' src='" . $view->rows[$i]->value->image . "'>\n";
-            echo "<p>" . $view->rows[$i]->value->space_type . "</p>\n";
+            echo "<h3>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</h3>\n";
             echo "<p>" . $view->rows[$i]->value->desc . "</p>\n";
-            echo "<p>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</p>\n";
+            echo "<p>" . $view->rows[$i]->value->space_type . "</p>\n";
             $the_owner = show_owner($users, $_SESSION['send_to']);
             echo "<h2>Owner:</h2>\n";
             echo "<a href='view_profile.php?user=" . base64_encode($the_owner->value->email) . "'><img class='owner_pic' src='" . $the_owner->value->prof_pic . "'></a>\n";

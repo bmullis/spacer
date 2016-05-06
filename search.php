@@ -2,6 +2,9 @@
 $page_title = "Search Spaces :: Spacer | Find Space, Rent Space";
 $current_page = "search";
 session_start();
+if (!isset($_SESSION['user'])) {
+    header('location: index.php');
+}
 ?>
 
 <?php include_once ('layout/header.php'); ?>
@@ -22,7 +25,7 @@ session_start();
                                 <option></option>
                             </select>
                             <input type="text" id="space_city" class="form-control" placeholder="City">
-                            <input type="text" id="space_state" class="form-control" placeholder="State">
+                            <input type="text" maxlength="2" id="space_state" class="form-control" placeholder="State">
                         </div>
                         <button href="#results" class="btn btn-primary" id="search_submit" type="submit">Search For a Space</button>
                     </form>

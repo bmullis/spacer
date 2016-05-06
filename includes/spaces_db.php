@@ -1,8 +1,8 @@
 <?php
 
-require_once "couchPHP/couch.php";
-require_once "couchPHP/couchClient.php";
-require_once "couchPHP/couchDocument.php";
+require_once "../couchPHP/couch.php";
+require_once "../couchPHP/couchClient.php";
+require_once "../couchPHP/couchDocument.php";
 require_once "secret.php";
 
 $client = new couchClient($endpoint, $db_name);
@@ -16,5 +16,7 @@ try {
     exit(1);
 }
 
+$result = json_encode($view);
+echo $result;
 
 ?>

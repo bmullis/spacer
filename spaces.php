@@ -2,6 +2,9 @@
 $page_title = "Profile :: Spacer | Find Space, Rent Space";
 $current_page = "spaces";
 session_start();
+if (!isset($_SESSION['user'])) {
+    header('location: index.php');
+}
 ?>
 
 <?php include_once ('layout/header.php'); ?>
