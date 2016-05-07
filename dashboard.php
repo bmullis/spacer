@@ -15,7 +15,7 @@ if (!isset($_SESSION['user'])) {
             <div class="col-md-10">
                 <h1>Dashboard</h1>
                 <?php
-                if (!isset($_SESSION['prof_pic'])) {
+                if (!isset($_SESSION['f_name'])) {
                     echo "<img src='img/blank_user.png'>\n";
                     echo "<h2>Welcome to Spacer</h2>\n";
                     echo "<h3>Get started by creating your profile</h3>\n";

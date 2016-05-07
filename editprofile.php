@@ -54,12 +54,12 @@ if (!isset($_SESSION['user'])) {
                             ?></textarea>
                             <?php
                             if (!isset($_SESSION['prof_pic'])) {
-                                echo "Choose a Profile Picture: <input type='file' id='prof_pic' name='prof_pic' required>\n";
-                            } else {
-                                echo "<p>Current Profile Picture: </p>\n";
-                                echo "<img id='prev_pic' class='owner_pic' src='" . $_SESSION['prof_pic'] . "'><br><br>\n";
+                                echo "<br><img id='prev_pic' class='owner_pic' src='" . $_SESSION['prof_pic'] . "'><br><br>\n";
                                 echo "Change Profile Picture: <input type='file' id='prof_pic' name='prof_pic'>\n";
-                            }
+                                } else {
+                                echo "<br><img id='prev_pic' class='owner_pic' src='" . $_SESSION['prof_pic'] . "'><br><br>\n";
+                                echo "Change Profile Picture: <input type='file' id='prof_pic' name='prof_pic'>\n";
+                                }
                             ?>
                         </div>
                         <button class="btn btn-primary" id="update_submit" name="update_submit" type="submit">Update Profile</button>

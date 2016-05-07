@@ -30,6 +30,7 @@ try {
 require_once ('add_online.php');
 
 $_SESSION['user'] = $_POST['email'];
+$_SESSION['prof_pic'] = 'img/blank_user.png';
 header ('location: ../dashboard.php');
 
 ?>

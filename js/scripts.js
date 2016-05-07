@@ -45,6 +45,8 @@ $(window).scroll(function() {
 
 });
 
+//window load
+
 $(window).load(function() {
 
     sidebar_height();
@@ -59,18 +61,6 @@ $(window).load(function() {
     }
 
 });
-
-//make sidebar same height as console window
-
-function sidebar_height() {
-    if ($(window).width() > 768) {
-        var console = $('.console').height();
-        var sidebar = $('.sidebar').height();
-            if (console > sidebar) {
-                $('.sidebar').css({'min-height': console});
-            }
-    }
-}
 
 //search page
 
@@ -95,6 +85,12 @@ $('#search_submit').click(function(event) {
 
     scroll_to(this);
 
+});
+
+//event listener for file upload change, sends to change profile function
+
+$("#prof_pic").change(function(){
+    readURL(this);
 });
 
 //get the results of the search and the ajax call
@@ -133,6 +129,8 @@ function search_results(space_type, space_city, space_state, data) {
 
 }
 
+//change profile picture by reading new file input URL
+
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -145,12 +143,22 @@ function readURL(input) {
     }
 }
 
-$("#prof_pic").change(function(){
-    readURL(this);
-});
+//scroll to function, smooth scrolls to href of selected anchor
 
 function scroll_to(ele_clicked) {
     $('html, body').animate({
         scrollTop: $( $.attr(ele_clicked, 'href') ).offset().top - 100
     },900);
+}
+
+//make sidebar same height as console window
+
+function sidebar_height() {
+    if ($(window).width() > 768) {
+        var console = $('.console').height();
+        var sidebar = $('.sidebar').height();
+        if (console > sidebar) {
+            $('.sidebar').css({'min-height': console});
+        }
+    }
 }

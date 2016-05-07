@@ -8,8 +8,8 @@
 
         <div class="row">
             <section class="user_login col-md-4 col-md-offset-2">
-                <form method="post" action="includes/get_user.php" class="form-horizontal">
-                    <div class="form-group">
+                <form method="post" action="includes/get_user.php" class="">
+                    <div class="">
                         <h1>Sign In</h1>
                         <input type="email" id="log_email" name="email" class="form-control" placeholder="Email address" required>
                         <input type="password" id="log_password" name="password" class="form-control" placeholder="Password" required>
@@ -19,8 +19,8 @@
             </section>
 
             <section class="user_register col-md-4">
-                <form method="post" action="includes/create_user.php" class="form-horizontal">
-                    <div class="form-group">
+                <form method="post" action="includes/create_user.php" class="">
+                    <div class="">
                         <h1>Register</h1>
                         <input type="email" id="reg_email" name="email" class="form-control" placeholder="Email address" required>
                         <input type="password" id="reg_password" name="password" class="form-control" placeholder="Password" required>

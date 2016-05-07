@@ -12,7 +12,7 @@
 
 @darkColor: #000000;
 @lightColor: #FAFAFA;
-@accColor: #86AC2A;
+@accColor: #1EAE41;
 @secColor: #385D48;
 @mainColor: #AF524D;
 
@@ -83,7 +83,9 @@ img {
 .btn-primary {
   background-color: @accColor;
   border: none;
+  border-radius: 0;
   margin-bottom: .5em;
+  padding: .75em 1em;
   transition: all .2s;
 }
 
@@ -425,10 +427,11 @@ table td {
 .user_login,
 .user_register {
   height: 22em;
+  text-align: center;
 }
 
 .user_login {
-  padding-left: 5em;
+  padding-left: 1em;
 }
 
 .login_header {
@@ -452,10 +455,6 @@ table td {
   margin-bottom: 0;
 }
 
-#modal .btn .btn-primary {
-  width: 80% !important;
-}
-
 form .cancel {
   color: @lightColor !important;
 }
@@ -465,20 +464,19 @@ form .cancel:hover {
   text-decoration: none !important;
 }
 
-.user_login input,
-.user_register input {
-  margin-bottom: 1em;
-  width: 80%;
-}
-
+.user_login button,
+.user_register button,
 input,
 optgroup,
 select,
 textarea {
+  border-radius: 0;
   margin-bottom: 1em;
+  width: 80%;
 }
 
 .console input, .console optgroup, .console select, .console textarea {
+  border-radius: 0;
   margin: 1em auto !important;
   width: 50% !important;
 }
@@ -621,25 +619,33 @@ footer a:active {
     width: 90%;
   }
   input, optgroup, select, textarea {
+    border-radius: 0;
     margin-bottom: 1em;
     width: 90%;
   }
   #modal {
     font-size: 1em;
-    margin-top: 4em;
+    margin-top: 1.5em;
     text-align: center !important;
   }
   #modal input, button {
-    margin: 0;
+    border-radius: 0;
+    margin-bottom: 1em;
   }
   #modal h1 {
-    font-size: 1em;
+    font-size: 1.5em;
     margin-top: 0;
   }
   .user_login,
   .user_register {
     height: auto;
-    text-align: center !important;
+    width: 300px;
+    text-align: center;
     z-index: 8675309;
+  }
+  .user_login input[type=text],
+  .user_register input[type=text] {
+    margin-bottom: 1em;
+    width: 280px !important;
   }
 }
