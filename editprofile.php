@@ -44,7 +44,7 @@ if (!isset($_SESSION['user'])) {
                             } else {
                                 echo "";
                             }
-                            ?>" id="state" name="state" class="form-control" placeholder="State" required>
+                            ?>" id="state" name="state" class="form-control" placeholder="State (use 2 letter abbrev)" maxlength="2" required>
                             <textarea id="bio" name="bio" class="form-control" placeholder="Bio" required><?php
                             if (isset($_SESSION['bio'])) {
                                 echo $_SESSION['bio'];

@@ -28,13 +28,15 @@ if ($_FILES['space_image']['name'] == "") {
     $image_path = "img/space_images/" . $_FILES['space_image']['name'];
 }
 
+$cap_space = strtoupper($_POST['space_state']);
+
 // make changes
 $doc->_id = $_POST['space_name'];
 $doc->space_name = $_POST['space_name'];
 $doc->space_type = $_POST['space_type'];
 $doc->space_desc = $_POST['space_desc'];
 $doc->space_city = $_POST['space_city'];
-$doc->space_state = $_POST['space_state'];
+$doc->space_state = $cap_space;
 $doc->space_image = $image_path;
 
 // update the document on CouchDB server

@@ -28,12 +28,14 @@ if ($_FILES['prof_pic']['name'] == "") {
     $image_path = "img/profile_pics/" . $_FILES['prof_pic']['name'];
 }
 
+$cap_state = strtoupper($_POST['state']);
+
 // make changes
 $doc->_id = $_SESSION['user'];
 $doc->f_name = $_POST['f_name'];
 $doc->l_name = $_POST['l_name'];
 $doc->city = $_POST['city'];
-$doc->state = $_POST['state'];
+$doc->state = $cap_state;
 $doc->bio = $_POST['bio'];
 $doc->prof_pic = $image_path;
 
@@ -47,7 +49,7 @@ try {
 $_SESSION['f_name'] = $_POST['f_name'];
 $_SESSION['l_name'] = $_POST['l_name'];
 $_SESSION['city'] = $_POST['city'];
-$_SESSION['state'] = $_POST['state'];
+$_SESSION['state'] = $cap_state;
 $_SESSION['bio'] = $_POST['bio'];
 $_SESSION['prof_pic'] = $image_path;
 

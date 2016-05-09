@@ -8,7 +8,7 @@ require_once "secret.php";
 $client = new couchClient($endpoint, $db_name);
 
 try {
-    $messages = $client->getView('sofa','all_messages');
+    $messages = $client->descending(TRUE)->getView('sofa','all_messages');
 } catch ( Exception $e ) {
     if ( $e->getCode() == 404 ) {
         echo "Document " . $view . " does not exist !";

@@ -26,7 +26,7 @@ $space_row = get_single_space($view, $this_space);
                             <input value="<?php echo $space_row->value->title; ?>" type="text" id="space_name" name="space_name" class="form-control" placeholder="Name Your Space" required>
                             <input value="<?php echo $space_row->value->space_type; ?>"type="text" id="space_type" name="space_type" class="form-control" placeholder="What Type of Space Is It?" required>
                             <input value="<?php echo $space_row->value->city; ?>"type="text" id="space_city" name="space_city" class="form-control" placeholder="City" required>
-                            <input value="<?php echo $space_row->value->state; ?>"type="text" id="space_state" name="space_state" class="form-control" placeholder="State" required>
+                            <input value="<?php echo $space_row->value->state; ?>"type="text" id="space_state" name="space_state" class="form-control" placeholder="State (use 2 letter abbrev)" maxlength="2" required>
                             <textarea id="space_desc" name="space_desc" class="form-control" placeholder="Describe Your Space" required><?php echo $space_row->value->desc; ?></textarea>
                             <input type="file" id="space_image" name="space_image" >
                             <input type="hidden" name="space_curr_image" value="<?php echo $space_row->value->image; ?>">
