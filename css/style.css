@@ -157,6 +157,14 @@ img {
   text-align: center;
   text-shadow: 0 0 10px #000;
 }
+#error_box {
+  background-color: rgba(255, 0, 0, 0.2);
+  border: 2px solid red;
+  font-size: 2em;
+  margin: 0 auto;
+  padding: 1em;
+  width: 80%;
+}
 .example {
   color: #000000;
   margin: 6em 0;
@@ -347,7 +355,7 @@ input,
 optgroup,
 select,
 textarea {
-  border-radius: 0;
+  border-radius: 0 !important;
   margin-bottom: 1em;
   width: 80%;
 }
@@ -355,7 +363,7 @@ textarea {
 .console optgroup,
 .console select,
 .console textarea {
-  border-radius: 0;
+  border-radius: 0 !important;
   margin: 1em auto !important;
   width: 50% !important;
 }
@@ -467,6 +475,7 @@ footer a:active {
   .console optgroup,
   .console select,
   .console textarea {
+    border-radius: 0;
     margin: 1em auto !important;
     width: 90% !important;
   }
@@ -495,7 +504,7 @@ footer a:active {
   }
   #modal input,
   button {
-    border-radius: 0;
+    border-radius: 0 !important;
     margin-bottom: 1em;
   }
   #modal h1 {

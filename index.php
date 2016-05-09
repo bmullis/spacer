@@ -8,6 +8,13 @@ session_start();
 
 <!-- header -->
 <header class="jumbotron">
+
+    <?php
+    if (isset($_SESSION['error_message'])) {
+        echo "<div class='has-error' id='error_box'>" . $_SESSION['error_message'] . "</div>\n";
+    }
+    ?>
+
     <h1>Spacer</h1>
     <h2>Find Space, Rent Space, Leave No Space Unused</h2>
 </header>

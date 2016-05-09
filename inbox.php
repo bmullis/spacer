@@ -17,7 +17,7 @@ if (!isset($_SESSION['user'])) {
                     <?php $user_messages =  get_messages($messages); ?>
                     <h1>Messages</h1>
                     <table class="table">
-                        <thead class="thead-inverse">
+                        <thead class="thead">
                         <tr>
                             <th>#</th>
                             <th>Subject</th>
