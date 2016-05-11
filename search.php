@@ -28,7 +28,7 @@ if (!isset($_SESSION['user'])) {
                             <input type="text" id="space_city" class="form-control" placeholder="City">
                             <input type="text" maxlength="2" id="space_state" class="form-control" placeholder="State">
                         </div>
-                        <button href="#results" class="btn btn-primary" id="search_submit" type="submit">Search For a Space</button>
+                        <button href="#results" class="btn btn-primary" id="search_submit" type="submit">Search Spaces</button>
                     </form>
                     <div id="results">
 
