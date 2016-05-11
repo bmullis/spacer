@@ -18,11 +18,12 @@ if (!isset($_SESSION['user'])) {
                         <div class="form-group">
                             <select id="space_type" class="form-control">
                                 <option selected="selected" disabled="disabled">Space Type</option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
+                                <option>Art Space</option>
+                                <option>Garage Space</option>
+                                <option>Fitness Space</option>
+                                <option>Office Space</option>
+                                <option>Work Space</option>
+                                <option>All Spaces</option>
                             </select>
                             <input type="text" id="space_city" class="form-control" placeholder="City">
                             <input type="text" maxlength="2" id="space_state" class="form-control" placeholder="State">

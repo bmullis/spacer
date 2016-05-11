@@ -24,10 +24,20 @@ $space_row = get_single_space($view, $this_space);
                     <form enctype="multipart/form-data" method="post" action="includes/update_space.php" class="form-horizontal">
                         <div class="form-group">
                             <input value="<?php echo $space_row->value->title; ?>" type="text" id="space_name" name="space_name" class="form-control" placeholder="Name Your Space" required>
-                            <input value="<?php echo $space_row->value->space_type; ?>"type="text" id="space_type" name="space_type" class="form-control" placeholder="What Type of Space Is It?" required>
+                            <select id="space_type" name="space_type" class="form-control" required>
+                                <option selected="selected" disabled="disabled">Space Type</option>
+                                <option <?php if ($space_row->value->space_type == "Art Space") echo " selected"; ?>>Art Space</option>
+                                <option <?php if ($space_row->value->space_type == "Garage Space") echo " selected"; ?>>Garage Space</option>
+                                <option <?php if ($space_row->value->space_type == "Fitness Space") echo " selected"; ?>>Fitness Space</option>
+                                <option <?php if ($space_row->value->space_type == "Office Space") echo " selected"; ?>>Office Space</option>
+                                <option <?php if ($space_row->value->space_type == "Work Space") echo " selected"; ?>>Work Space</option>
+                                <option <?php if ($space_row->value->space_type == "Other Space") echo " selected"; ?>>Other Space</option>
+                            </select>
                             <input value="<?php echo $space_row->value->city; ?>"type="text" id="space_city" name="space_city" class="form-control" placeholder="City" required>
                             <input value="<?php echo $space_row->value->state; ?>"type="text" id="space_state" name="space_state" class="form-control" placeholder="State (use 2 letter abbrev)" maxlength="2" required>
                             <textarea id="space_desc" name="space_desc" class="form-control" placeholder="Describe Your Space" required><?php echo $space_row->value->desc; ?></textarea>
+                            <br><img id="prev_space" class="owner_pic" src="<?php echo $space_row->value->image; ?>"><br><br>
+                            <p>Change Space Image: </p>
                             <input type="file" id="space_image" name="space_image" >
                             <input type="hidden" name="space_curr_image" value="<?php echo $space_row->value->image; ?>">
                         </div>

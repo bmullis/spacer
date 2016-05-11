@@ -93,6 +93,10 @@ $("#prof_pic").change(function(){
     readURL(this);
 });
 
+$("#space_image").change(function(){
+    readURL(this);
+});
+
 //get the results of the search and the ajax call
 
 function search_results(space_type, space_city, space_state, data) {
@@ -100,10 +104,17 @@ function search_results(space_type, space_city, space_state, data) {
     var i;
 
     //determine if the result is within search parameters
-
-    for (i = 0; i < data.rows.length; i++) {
-        if (data.rows[i].value.city == space_city && data.rows[i].value.state == space_state) {
-            results.push(data.rows[i]);
+    if (space_type == "All Spaces") {
+        for (i = 0; i < data.rows.length; i++) {
+            if (data.rows[i].value.city == space_city && data.rows[i].value.state == space_state) {
+                results.push(data.rows[i]);
+            }
+        }
+    } else {
+        for (i = 0; i < data.rows.length; i++) {
+            if (data.rows[i].value.space_type == space_type && data.rows[i].value.city == space_city && data.rows[i].value.state == space_state) {
+                results.push(data.rows[i]);
+            }
         }
     }
 
@@ -137,6 +148,7 @@ function readURL(input) {
 
         reader.onload = function (event) {
             $('#prev_pic').attr('src', event.target.result);
+            $('#prev_space').attr('src', event.target.result);
         };
 
         reader.readAsDataURL(input.files[0]);

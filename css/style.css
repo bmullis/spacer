@@ -17,7 +17,7 @@ html {
   background-color: #000;
 }
 body {
-  background-color: #fafafa;
+  background-color: #ffffff;
   color: #000000 !important;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
@@ -75,7 +75,7 @@ img {
   max-height: 100vh;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #fafafa;
+  color: #ffffff;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:active,
@@ -109,7 +109,7 @@ img {
   transition: all 0.2s ease-in-out;
 }
 .dropdown-menu > li > a {
-  color: #fafafa;
+  color: #ffffff;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus,
@@ -122,10 +122,10 @@ img {
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: transparent;
-  color: #fafafa;
+  color: #ffffff;
 }
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-  color: #fafafa;
+  color: #ffffff;
 }
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:active,
@@ -151,7 +151,7 @@ img {
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
-  color: #fafafa;
+  color: #ffffff;
   margin-bottom: 6em;
   padding: 9em 0 7em 0;
   text-align: center;
@@ -219,7 +219,7 @@ img {
   width: 300px;
 }
 .console {
-  background-color: #fafafa;
+  background-color: #ffffff;
   margin-left: 0;
   margin-right: 0;
   min-height: 80vh;
@@ -247,7 +247,7 @@ img {
   color: #af524d !important;
 }
 .main a {
-  color: #fafafa;
+  color: #ffffff;
 }
 .prof_active {
   border-left: 2px solid #1eae41 !important;
@@ -256,7 +256,7 @@ img {
 .sidebar a:focus,
 .sidebar a:active {
   background-color: #af524d !important;
-  color: #fafafa !important;
+  color: #ffffff !important;
   text-decoration: underline;
 }
 table {
@@ -307,7 +307,7 @@ table td {
 }
 #modal {
   background-color: transparent;
-  color: #fafafa;
+  color: #ffffff;
   margin-top: 10em;
 }
 #modal .btn-primary {
@@ -343,7 +343,7 @@ table td {
   margin-bottom: 0;
 }
 form .cancel {
-  color: #fafafa !important;
+  color: #ffffff !important;
 }
 form .cancel:hover {
   background-color: #008c1f !important;
@@ -404,7 +404,7 @@ footer {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  color: #fafafa;
+  color: #ffffff;
   padding: 3em 0 3em 0;
   position: relative;
   z-index: 410;
