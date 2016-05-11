@@ -28,7 +28,7 @@ if (!isset($_SESSION['user'])) {
                                 <option>Other Space</option>
                             </select>
                             <input type="text" id="space_city" name="space_city" class="form-control" placeholder="City" required>
-                            <input type="text" id="space_state" name="space_state" class="form-control" placeholder="State (use 2 letter abbrev.)" maxlength="2" required>
+                            <input type="text" id="space_state" name="space_state" class="form-control" placeholder="State (use 2 letter abbrev)" maxlength="2" required>
                             <textarea id="space_desc" name="space_desc" class="form-control" placeholder="Describe Your Space" required></textarea>
                             <br><img id="prev_space" class="owner_pic" src="img/cube.png"><br><br>
                             <p>Change Space Image: </p>
