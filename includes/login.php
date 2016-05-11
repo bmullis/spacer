@@ -14,7 +14,7 @@
                         <input type="email" id="log_email" name="email" class="form-control" placeholder="Email address" required>
                         <input type="password" id="log_password" name="password" class="form-control" placeholder="Password" required>
                     </div>
-                    <button class="btn btn-primary" id="log_submit" name="log_submit" type="submit">Sign in</button>
+                    <button class="btn btn-primary" id="log_submit" name="log_submit" type="submit">Sign In</button>
                 </form>
             </section>
 
