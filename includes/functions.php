@@ -141,13 +141,31 @@ function get_messages($messages) {
     return $user_messages;
 }
 
+function get_unread_messages($messages) {
+    $arrLength = count($messages->rows);
+    $unread_messages = 0;
+
+    for ($i = 0; $i <$arrLength; $i++) {
+        if ($messages->rows[$i]->value->msg_to == $_SESSION['user'] && $messages->rows[$i]->value->unread == true) {
+            $unread_messages++;
+        }
+    }
+    return $unread_messages;
+}
+
 function show_user_messages($user_messages) {
     $arrLength = count($user_messages);
 
     for ($i = 0; $i < $arrLength; $i++) {
         echo "    <tr>\n";
         echo "      <th scope='row'>" . ($i + 1) . "</th>\n";
-        echo "          <td><a href='view_message.php?msg_id=" . $user_messages[$i]->value->msg_id . "'>" . $user_messages[$i]->value->msg_subject . "</a></td>\n";
+
+        if ($user_messages[$i]->value->unread == true) {
+            echo "          <td><strong><a href='view_message.php?msg_id=" . $user_messages[$i]->value->msg_id . "'>" . $user_messages[$i]->value->msg_subject . "</a></strong></td>\n";
+        } else {
+            echo "          <td><a href='view_message.php?msg_id=" . $user_messages[$i]->value->msg_id . "'>" . $user_messages[$i]->value->msg_subject . "</a></td>\n";
+        }
+
         echo "          <td>" . $user_messages[$i]->value->timestamp . "</td>\n";
         echo "  </tr>\n";
     }
@@ -159,6 +177,9 @@ function get_single_message($user_messages, $msg_id) {
     for ($i = 0; $i < $arrLength; $i++) {
         if ($user_messages[$i]->value->msg_id == $msg_id) {
             $current = $user_messages[$i];
+        }
+        if ($current->value->unread == true) {
+            header ('location: includes/update_message.php?msg_id=' . $msg_id);
         }
     }
     return $current;

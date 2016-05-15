@@ -16,7 +16,7 @@ if (!isset($_SESSION['user'])) {
                     <h1>Search For Space</h1>
                     <form id="main_search" enctype="multipart/form-data" method="post" action="includes/update_user.php" class="form-horizontal">
                         <div class="form-group">
-                            <select id="space_type" class="form-control">
+                            <select id="space_type" class="form-control" required>
                                 <option selected="selected" disabled="disabled">Space Type</option>
                                 <option>Art Space</option>
                                 <option>Garage Space</option>
@@ -25,8 +25,8 @@ if (!isset($_SESSION['user'])) {
                                 <option>Work Space</option>
                                 <option>All Spaces</option>
                             </select>
-                            <input type="text" id="space_city" class="form-control" placeholder="City">
-                            <input type="text" maxlength="2" id="space_state" class="form-control" placeholder="State">
+                            <input type="text" id="space_city" class="form-control" placeholder="City" required>
+                            <input type="text" maxlength="2" id="space_state" class="form-control" placeholder="State" required>
                         </div>
                         <button href="#results" class="btn btn-primary" id="search_submit" type="submit">Search Spaces</button>
                     </form>

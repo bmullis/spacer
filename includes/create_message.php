@@ -16,6 +16,7 @@ $new_doc->msg_subject = $_POST['msg_subject'];
 $new_doc->msg_message = $_POST['msg_message'];
 $new_doc->timestamp = date("Y-m-d");
 $new_doc->type = 'message';
+$new_doc->unread = true;
 try {
     $response = $client->storeDoc($new_doc);
 } catch (Exception $e) {

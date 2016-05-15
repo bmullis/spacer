@@ -1,4 +1,4 @@
-<?php $message_count = count(get_messages($messages)); ?>
+<?php $unread_messages = get_unread_messages($messages); ?>
 
 <div class="col-md-2 sidebar">
     <ul class="nav nav-sidebar text-xs-center">
@@ -6,7 +6,7 @@
                 <i class="fa fa-dashboard"></i><span class="no_under"> &nbsp; </span>Dashboard
             </a></li>
         <li><a <?php if ($current_page == 'inbox') { echo "class='prof_active'"; } ?> href="inbox.php">
-                <i class="fa fa-envelope"></i><span class="no_under"> &nbsp; </span>Inbox (<?php echo $message_count; ?>)
+                <i class="fa fa-envelope"></i><span class="no_under"> &nbsp; </span>Inbox <?php if ($unread_messages == 0) { echo ""; } else { echo "(" . $unread_messages . ")"; } ?>
             </a></li>
         <li><a <?php if ($current_page == 'profile') { echo "class='prof_active'"; } ?> href="profile.php">
                 <i class="fa fa-user"></i><span class="no_under"> &nbsp; </span>Profile
