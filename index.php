@@ -25,7 +25,7 @@ session_start();
 
         <div class="row">
             <div class="col-md-12">
-                <h1>Find the space you need to unleash your creativity.</h1>
+                <h2>Find the space you need to unleash your creativity.</h2>
             </div>
         </div>
         <div class="row">
@@ -45,7 +45,7 @@ session_start();
 
         <div class="row">
             <div class="col-md-12">
-                <h1>What projects will you get done?</h1>
+                <h2>What projects will you get done?</h2>
             </div>
         </div>
         <div class="row">

@@ -127,7 +127,7 @@ function search_results(space_type, space_city, space_state, data) {
             '<div class="space_result">' +
             '<h2>' + results[i].value.title + '</h2>' +
             '<img class="space_pic" src="' + results[i].value.image + '">' +
-            '<h3>' + results[i].value.desc + '</h3>' +
+            '<p>' + results[i].value.desc + '</p>' +
             '<form action="view.php" method="post">' +
             '<input type="hidden" name="current_space" value="' + results[i].value.title + '">' +
             '<button class="btn btn-primary">View Space</button>' +

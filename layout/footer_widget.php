@@ -1,6 +1,6 @@
     <div class="container-fluid online_widget">
         <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-12 text-left">
                 <h3>Online Users:</h3>
                 <?php $online = get_online_users($online_users); ?>
                 <?php

@@ -1,8 +1,4 @@
-<?php
-if (isset($_SESSION['user']) && $current_page !== "index" && $current_page !== "about" && $current_page !== "contact") {
-    include_once ('layout/footer_widget.php');
-}
-?>
+
 <footer>
     <div class="container">
         <div class="row">

@@ -18,12 +18,12 @@ if (!isset($_SESSION['user'])) {
                 </div>                <?php
                 if (!isset($_SESSION['f_name'])) {
                     echo "<img class='rounded' src='img/blank_user.png'>\n";
-                    echo "<h1>Welcome to Spacer</h1>\n";
+                    echo "<h2>Welcome to Spacer</h2>\n";
                     echo "<h3>Get started by creating your profile</h3>\n";
                     echo "<a href='editprofile.php' class='btn btn-primary'>Create Profile</a>\n";
                 } else {
                     echo "<img class='rounded' src='" . $_SESSION['prof_pic'] . "'>\n";
-                    echo "<h1>Welcome to Spacer</h1>\n";
+                    echo "<h2>Welcome to Spacer</h2>\n";
                     echo "<a href='search.php' class='btn btn-primary'>Find a Space</a>\n";
                     echo "<a href='spaces.php' class='btn btn-primary'>Host a Space</a>\n";
                 }

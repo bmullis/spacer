@@ -22,8 +22,8 @@ $_SESSION['send_to'] = $user;
                     </div>
                     <img class="rounded" src="<?php echo $the_user->value->prof_pic; ?>">
                     <h2><?php echo $the_user->value->city . ", " . $the_user->value->state; ?></h2>
-                    <h3><?php echo $the_user->value->bio; ?></h3>
-
+                    <p><?php echo $the_user->value->bio; ?></p>
+                    <br>
                     <h1>Spaces Hosted by <?php echo $the_user->value->f_name; ?></h1>
                     <?php $user_spaces = get_user_spaces($view, $the_user->value->email); ?>
                     <?php show_user_spaces($user_spaces); ?>

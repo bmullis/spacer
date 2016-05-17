@@ -11,7 +11,7 @@ function show_spaces($view, $owner) {
             echo "<h1>" . $view->rows[$i]->value->title . "</h1>\n";
             echo "<h2>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</h2>\n";
             echo "<h3>" . $view->rows[$i]->value->space_type . "</h3>\n";
-            echo "<h3>" . $view->rows[$i]->value->desc . "</h3>\n";
+            echo "<p>" . $view->rows[$i]->value->desc . "</p>\n";
             echo "<a href='editspace.php?space=" . $view->rows[$i]->value->title . "' class='btn btn-primary'>Edit This Space</a>\n";
             echo "<a href='createspace.php' class='btn btn-primary'>New Space</a>\n";
             echo "</div>\n";
@@ -35,12 +35,12 @@ function show_user_spaces($userspaces) {
         echo "<img class='space_pic' src='" . $userspaces[$i]->value->image . "'>\n";
         echo "<h3>" . $userspaces[$i]->value->city . ", " . $userspaces[$i]->value->state . "</h3>\n";
         echo "<h3>" . $userspaces[$i]->value->space_type . "</h3>\n";
-        echo "<h3>" . $userspaces[$i]->value->desc . "</h3>\n";
+        echo "<p>" . $userspaces[$i]->value->desc . "</p><br>\n";
         $spaceCount++;
     }
 
     if ($spaceCount == 0) {
-       echo "<h3>This user doesn't host any spaces yet.</h3>\n";
+       echo "<p>This user doesn't host any spaces yet.</p>\n";
     }
 }
 
@@ -81,7 +81,7 @@ function show_space($users, $view, $current_space) {
             echo "<h1>" . $view->rows[$i]->value->title . "</h1>\n";
             echo "<h2>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</h2>\n";
             echo "<h3>" . $view->rows[$i]->value->space_type . "</h3>\n";
-            echo "<h3>" . $view->rows[$i]->value->desc . "</h3>\n";
+            echo "<p>" . $view->rows[$i]->value->desc . "</p>\n";
             $the_owner = show_owner($users, $_SESSION['send_to']);
             echo "<h2>Owner:</h2>\n";
             echo "<a href='view_profile.php?user=" . base64_encode($the_owner->value->email) . "'><img class='owner_pic' src='" . $the_owner->value->prof_pic . "'></a>\n";
@@ -119,14 +119,14 @@ function get_profile_info() {
         echo "<h1>" . $_SESSION['f_name'] . " " . $_SESSION['l_name'] . "</h1>\n";
     }
     if (!isset($_SESSION['city'])) {
-        echo "<h2>City: </h2>\n";
+        echo "<h3>City: </h3>\n";
     } else {
-        echo "<h2>" . $_SESSION['city'] . ", " . $_SESSION['state'] . "</h2>\n";
+        echo "<h3>" . $_SESSION['city'] . ", " . $_SESSION['state'] . "</h3>\n";
     }
     if (!isset($_SESSION['bio'])) {
-        echo "<h3>Bio: </h3>\n";
+        echo "<p>Bio: </p>\n";
     } else {
-        echo "<h3>" . $_SESSION['bio'] . "</h3>\n";
+        echo "<p>" . $_SESSION['bio'] . "</p>\n";
     }
 }
 
@@ -162,7 +162,7 @@ function show_user_messages($user_messages) {
         echo "      <th scope='row'>" . ($i + 1) . "</th>\n";
 
         if ($user_messages[$i]->value->unread == true) {
-            echo "          <td><strong><a href='view_message.php?msg_id=" . $user_messages[$i]->value->msg_id . "'>" . $user_messages[$i]->value->msg_subject . "</a></strong></td>\n";
+            echo "          <td><span id='unread'><strong><a href='view_message.php?msg_id=" . $user_messages[$i]->value->msg_id . "'>" . $user_messages[$i]->value->msg_subject . "</a></strong></span></td>\n";
         } else {
             echo "          <td><a href='view_message.php?msg_id=" . $user_messages[$i]->value->msg_id . "'>" . $user_messages[$i]->value->msg_subject . "</a></td>\n";
         }

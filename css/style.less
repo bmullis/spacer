@@ -10,18 +10,18 @@
 //colors
 ///////
 
-@darkColor: #000000;
-@lightColor: #FFFFFF;
-@accColor: #1EAE41;
-@secColor: #385D48;
-@mainColor: #AF524D;
+@darkColor: #111;
+@lightColor: #fff;
+@accColor: #1eae41;
+@secColor: #575d77;
+@grayColor: #d5d5d5;
 
 ////////
 //fonts
 //////
 
-@mainFont: 'Lato', sans-serif;
-@headerFont: 'Raleway', sans-serif;
+@mainFont: 'Raleway', sans-serif;
+@headerFont: 'Oswald', sans-serif;
 
 //////////
 //mix-ins
@@ -61,17 +61,21 @@ body {
 }
 
 h1 {
-  font-size: 2.25em;
   .header;
+  font-size: 2.25em;
+  letter-spacing: 4px !important;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: 1.5em;
   .header;
+  font-family: @mainFont;
+  font-size: 1.5em;
 }
 
 h3 {
   .header;
+  font-family: 'Raleway', sans-serif !important;
   font-size: 1.25em;
   letter-spacing: 0;
   margin-top: 10px;
@@ -85,9 +89,8 @@ img {
   background-color: @accColor;
   border: none;
   border-radius: 0;
-  font-family: @headerFont;
+  font-family: @mainFont;
   font-size: 1.25em;
-  margin-top: .5em;
   margin-bottom: .5em;
   padding: .5em .75em;
   transition: all .2s;
@@ -105,12 +108,16 @@ img {
   border-radius: 50% !important;
 }
 
+#unread a {
+  color: @accColor !important;
+}
+
 /////////////
 //nav styles
 ///////////
 
 .navbar-default {
-  background-color: @darkColor;
+  background-color: @lightColor;
   border-top: 4px solid @accColor;
   border-bottom: none;
   padding: 0;
@@ -129,7 +136,7 @@ img {
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: @lightColor;
+  color: @darkColor;
   padding-top: 1.4em;
   padding-bottom: .25em;
 }
@@ -141,14 +148,13 @@ img {
 }
 
 .navbar-default .navbar-brand {
-  color: @accColor;
+  color: @darkColor;
   font-family: @headerFont;
   font-size: 2em;
   font-weight: 300;
   margin-top: .2em;
   margin-bottom: .2em;
   text-transform: uppercase;
-  transition: all .2s ease-in-out;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -169,7 +175,7 @@ img {
 }
 
 .dropdown-menu {
-  background-color: @darkColor;
+  background-color: @lightColor;
   border: none;
   box-shadow: none;
   padding-bottom: 15px;
@@ -192,11 +198,11 @@ img {
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: transparent;
-  color: @lightColor;
+  color: @darkColor;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-  color: @lightColor;
+  color: @darkColor;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
@@ -228,13 +234,13 @@ img {
 //////////////
 
 .jumbotron {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/header-image.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(../img/header-image.jpg);
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   background-size: cover;
   color: @lightColor;
   margin-bottom: 6em;
-  padding: 9em 0 7em 0;
+  padding: 12em 0 10em 0;
   text-align: center;
   text-shadow: 0 0 10px #000;
 }
@@ -267,6 +273,7 @@ img {
 
 .ribbon {
   background-color: @accColor;
+  color: @lightColor;
   margin-top: 8em;
   padding-bottom: .5em;
   text-align: center;
@@ -321,24 +328,26 @@ img {
   background-color: @lightColor;
   margin-left: 0;
   margin-right: 0;
-  min-height: 80vh;
+  min-height: 90vh;
   position: relative;
 }
 
 .col-md-10 {
   padding-bottom: 5em;
+  padding-right: 0;
 }
 
 .sidebar {
-  background-color: @darkColor;
-  border: 1px solid @accColor;
-  padding: 8em .25em 0 .25em;
+  background-color: @lightColor;
+  padding: 9em .25em 0 1.75em;
+  position: fixed;
+  right: 0;
   text-align: left;
-  z-index: 717;
+  z-index: 1;
 }
 
 .nav-sidebar li a {
-  padding: .5em 2em .5em 2em;
+  padding: .5em 2em .5em 1em;
 }
 
 .nav-sidebar hr {
@@ -347,8 +356,8 @@ img {
 }
 
 .sidebar a {
-  border-left: 2px solid @darkColor;
-  color: @mainColor !important;
+  border-left: 2px solid @lightColor;
+  color: @darkColor !important;
 }
 
 .main a {
@@ -362,7 +371,7 @@ img {
 .sidebar a:hover,
 .sidebar a:focus,
 .sidebar a:active {
-  background-color: @mainColor !important;
+  background-color: @accColor !important;
   color: @lightColor !important;
   text-decoration: underline;
 }
@@ -373,14 +382,18 @@ table {
 }
 
 table a {
-  color: @mainColor;
+  color: @darkColor;
 }
 
 table a:hover,
 table a:active,
 table a:focus {
-  color: @mainColor - #222;
+  color: @accColor - #222;
   text-decoration: underline;
+}
+
+table thead {
+  font-size: 1.2em;
 }
 
 table td {
@@ -437,6 +450,8 @@ table td {
   text-transform: uppercase;
 }
 
+.main-inbox h3,
+.main-form h3,
 .main .console h3 {
   margin-left: auto;
   margin-right: auto;
@@ -444,27 +459,25 @@ table td {
 }
 
 .console_header {
-  background-color: @darkColor;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/header-image.jpg);
+  background-color: @accColor;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/green_background.jpg);
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   background-size: cover;
-  color: @lightColor;
   padding: 3em 0 9em 0;
   margin-bottom: -10em;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .inbox_header,
 .search_header {
-  background-color: @darkColor;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/header-image.jpg);
+  background-color: @grayColor;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(../img/green_background.jpg);
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   background-size: cover;
-  color: @lightColor;
   padding: 3em 0 3em 0;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .main .console .rounded {
@@ -479,7 +492,7 @@ table td {
 
 #modal {
   background-color: transparent;
-  color: @lightColor;
+  color: @darkColor;
   margin-top: 10em;
 }
 
@@ -490,7 +503,7 @@ table td {
 .login_header,
 .user_login,
 .user_register {
-  background-color: @darkColor + #333;
+  background-color: @grayColor;
 }
 
 .user_login,
@@ -580,17 +593,21 @@ textarea {
 //////////////
 
 .online_widget {
-  background-color: @accColor;
+  background-color: @grayColor;
+  border-bottom: 3px solid @accColor;
   padding-bottom: 1em;
+  padding-top: 1em;
+  position: relative;
+  z-index: 410;
 }
 
 .online_widget h3 {
-  color: @lightColor;
-  margin-top: 10px;
+  color: @darkColor;
+  display: inline;
 }
 
 .online_widget img {
-  margin: 0 .5em;
+  margin: 0 .25em;
   height: 50px !important;
   width: 50px !important;
 }
@@ -600,12 +617,9 @@ textarea {
 //////////////
 
 footer {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/header-image.jpg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: cover;
+  background: @darkColor;
   color: @lightColor;
-  padding: 3em 0 3em 0;
+  padding: 2em 0 1em 0;
   position: relative;
   z-index: 410;
 }
@@ -689,6 +703,8 @@ footer a:active {
   .main-form .console .search_header h1 {
     font-size: 2em;
   }
+  .main-inbox h3,
+  .main-form h3,
   .main .console h3 {
     margin-left: auto;
     margin-right: auto;
@@ -719,7 +735,7 @@ footer a:active {
   }
   #modal {
     font-size: 1em;
-    margin-top: 1.5em;
+    margin-top: 1.75em;
     text-align: center !important;
   }
   #modal input, button {
