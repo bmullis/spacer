@@ -7,11 +7,11 @@ function show_spaces($view, $owner) {
     for ($i = 0; $i < $arrLength; $i++) {
         if ($view->rows[$i]->value->author == $owner) {
             echo "<div class='space_prof_result'>\n";
-            echo "<h2>" . $view->rows[$i]->value->title . "</h2>\n";
-            echo "<img class='space_pic' src='" . $view->rows[$i]->value->image . "'>\n";
-            echo "<h3>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</h3>\n";
-            echo "<p>" . $view->rows[$i]->value->desc . "</p>\n";
-            echo "<p>" . $view->rows[$i]->value->space_type . "</p>\n";
+            echo "<img class='rounded' src='" . $view->rows[$i]->value->image . "'>\n";
+            echo "<h1>" . $view->rows[$i]->value->title . "</h1>\n";
+            echo "<h2>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</h2>\n";
+            echo "<h3>" . $view->rows[$i]->value->space_type . "</h3>\n";
+            echo "<h3>" . $view->rows[$i]->value->desc . "</h3>\n";
             echo "<a href='editspace.php?space=" . $view->rows[$i]->value->title . "' class='btn btn-primary'>Edit This Space</a>\n";
             echo "<a href='createspace.php' class='btn btn-primary'>New Space</a>\n";
             echo "</div>\n";
@@ -20,7 +20,7 @@ function show_spaces($view, $owner) {
     }
 
     if ($spaceCount == 0) {
-        echo "<br><br>\n";
+        echo "<img class='space_pic' src='img/cube.png'>\n";
         echo "<p>You haven't made any spaces yet.</p>\n";
         echo "<a href='createspace.php' class='btn btn-primary'>Host a Space</a>\n";
     }
@@ -34,13 +34,13 @@ function show_user_spaces($userspaces) {
         echo "<h2>" . $userspaces[$i]->value->title . "</h2>\n";
         echo "<img class='space_pic' src='" . $userspaces[$i]->value->image . "'>\n";
         echo "<h3>" . $userspaces[$i]->value->city . ", " . $userspaces[$i]->value->state . "</h3>\n";
-        echo "<p>" . $userspaces[$i]->value->desc . "</p>\n";
-        echo "<p>" . $userspaces[$i]->value->space_type . "</p>\n";
+        echo "<h3>" . $userspaces[$i]->value->space_type . "</h3>\n";
+        echo "<h3>" . $userspaces[$i]->value->desc . "</h3>\n";
         $spaceCount++;
     }
 
     if ($spaceCount == 0) {
-       echo "<p>This user doesn't any spaces yet.</p>\n";
+       echo "<h3>This user doesn't host any spaces yet.</h3>\n";
     }
 }
 
@@ -77,16 +77,16 @@ function show_space($users, $view, $current_space) {
             $_SESSION['send_to'] = $view->rows[$i]->value->author;
             $_SESSION['current_space'] = $view->rows[$i]->value->title;
             echo "<div class='space_prof_result'>\n";
-            echo "<h2 class='text-center'>" . $view->rows[$i]->value->title . "</h2>\n";
-            echo "<img class='space_pic' src='" . $view->rows[$i]->value->image . "'>\n";
-            echo "<h3>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</h3>\n";
-            echo "<p>" . $view->rows[$i]->value->desc . "</p>\n";
-            echo "<p>" . $view->rows[$i]->value->space_type . "</p>\n";
+            echo "<img class='rounded' src='" . $view->rows[$i]->value->image . "'>\n";
+            echo "<h1>" . $view->rows[$i]->value->title . "</h1>\n";
+            echo "<h2>" . $view->rows[$i]->value->city . ", " . $view->rows[$i]->value->state . "</h2>\n";
+            echo "<h3>" . $view->rows[$i]->value->space_type . "</h3>\n";
+            echo "<h3>" . $view->rows[$i]->value->desc . "</h3>\n";
             $the_owner = show_owner($users, $_SESSION['send_to']);
             echo "<h2>Owner:</h2>\n";
             echo "<a href='view_profile.php?user=" . base64_encode($the_owner->value->email) . "'><img class='owner_pic' src='" . $the_owner->value->prof_pic . "'></a>\n";
-            echo "<h3>" . $the_owner->value->f_name . " " . $the_owner->value->l_name . "</h3>\n";
-            echo "<p>" . $the_owner->value->city . ", " . $the_owner->value->state . "</p>\n";
+            echo "<h2>" . $the_owner->value->f_name . " " . $the_owner->value->l_name . "</h2>\n";
+            echo "<h3>" . $the_owner->value->city . ", " . $the_owner->value->state . "</h3>\n";
             echo "<a href='message.php' class='btn btn-primary'>Contact User</a>\n";
             echo "<a href='view_profile.php?user=" . base64_encode($the_owner->value->email) . "' class='btn btn-primary '>View User</a>\n";
             echo "</div>\n";
@@ -107,25 +107,26 @@ function show_owner($users, $owner) {
 }
 
 function get_profile_info() {
-    if (!isset($_SESSION['f_name'])) {
-        echo "<h2>Name: </h2>\n";
-    } else {
-        echo "<h2>" . $_SESSION['f_name'] . " " . $_SESSION['l_name'] . "</h2>\n";
-    }
+
     if (!isset($_SESSION['prof_pic'])) {
-        echo "<img src='img/blank_user.png'>\n";
+        echo "<img class='rounded' src='img/blank_user.png'>\n";
     } else {
-        echo "<img src='" . $_SESSION['prof_pic'] . "'>\n";
+        echo "<img class='rounded' src='" . $_SESSION['prof_pic'] . "'>\n";
+    }
+    if (!isset($_SESSION['f_name'])) {
+        echo "<h1>Name: </h1>\n";
+    } else {
+        echo "<h1>" . $_SESSION['f_name'] . " " . $_SESSION['l_name'] . "</h1>\n";
     }
     if (!isset($_SESSION['city'])) {
-        echo "<h3>City: </h3>\n";
+        echo "<h2>City: </h2>\n";
     } else {
-        echo "<h3>" . $_SESSION['city'] . ", " . $_SESSION['state'] . "</h3>\n";
+        echo "<h2>" . $_SESSION['city'] . ", " . $_SESSION['state'] . "</h2>\n";
     }
     if (!isset($_SESSION['bio'])) {
-        echo "<p>Bio: </p>\n";
+        echo "<h3>Bio: </h3>\n";
     } else {
-        echo "<p>" . $_SESSION['bio'] . "</p>\n";
+        echo "<h3>" . $_SESSION['bio'] . "</h3>\n";
     }
 }
 
@@ -177,9 +178,9 @@ function get_single_message($user_messages, $msg_id) {
     for ($i = 0; $i < $arrLength; $i++) {
         if ($user_messages[$i]->value->msg_id == $msg_id) {
             $current = $user_messages[$i];
-        }
-        if ($current->value->unread == true) {
-            header ('location: includes/update_message.php?msg_id=' . $msg_id);
+            if ($current->value->unread == true) {
+                header ('location: includes/update_message.php?msg_id=' . $msg_id);
+            }
         }
     }
     return $current;

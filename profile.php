@@ -14,7 +14,9 @@ if (!isset($_SESSION['user'])) {
 
             <div class="row console">
                 <div class="col-md-10">
-                    <h1>Your Profile</h1>
+                    <div class="console_header">
+                        <h1>Your Profile</h1>
+                    </div>
                     <?php get_profile_info(); ?>
                     <a href="editprofile.php" class="btn btn-primary">Edit Profile</a>
                 </div>

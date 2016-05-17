@@ -14,7 +14,10 @@ if (!isset($_SESSION['user'])) {
 
             <div class="row console">
                 <div class="col-md-10">
-                    <h1>Edit Profile</h1>
+                    <div class="search_header">
+                        <h1>Edit Profile</h1>
+                    </div>
+                    <br><br>
                     <form enctype="multipart/form-data" method="post" action="includes/update_user.php" class="form-horizontal">
                         <div class="form-group">
                             <input type="text" value="<?php

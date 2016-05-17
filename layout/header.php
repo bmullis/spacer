@@ -59,7 +59,12 @@ require_once ('includes/functions.php');
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php"><img src="img/cube.png">Spacer</a>
+            <?php if (isset($_SESSION['user'])) {
+                echo "<a class='navbar-brand' href='dashboard.php' ><img src='img/cube.png'> Spacer</a>\n";
+            } else {
+                echo "<a class='navbar-brand' href='index.php' ><img src='img/cube.png'> Spacer</a>\n";
+            }
+            ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -71,18 +76,8 @@ require_once ('includes/functions.php');
                 <?php if (isset($_SESSION['user'])) {
 
                     echo "    <li class='dropdown'>\n";
-                    echo "        <a href='#' class='text-md-right text-sm-left dropdown-toggle";
-                        if ($current_page == 'profile' ||
-                            $current_page == 'dashboard' ||
-                            $current_page == 'spaces' ||
-                            $current_page == 'search' ||
-                            $current_page == 'inbox') {
-                            echo " active'\n";
-                        } else {
-                            echo "'\n";
-                        }
-                    echo "data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>\n";
-                    echo            $_SESSION['user'] . "<span class='caret'></span>\n";
+                    echo "        <a href='#' class='text-md-right text-sm-left dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>\n";
+                    echo "        <img class='owner_pic' src='" . $_SESSION['prof_pic'] . "'><span class='caret'></span>\n";
                     echo "        </a>\n";
                     echo "        <ul class='dropdown-menu'>\n";
                     echo "            <li><a class='";

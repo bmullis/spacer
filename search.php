@@ -13,7 +13,9 @@ if (!isset($_SESSION['user'])) {
         <div class="container-fluid main-form">
             <div class="row console">
                 <div class="col-md-10">
-                    <h1>Search For Space</h1>
+                    <div class="search_header">
+                        <h1>Search Spaces</h1>
+                    </div>
                     <form id="main_search" enctype="multipart/form-data" method="post" action="includes/update_user.php" class="form-horizontal">
                         <div class="form-group">
                             <select id="space_type" class="form-control" required>

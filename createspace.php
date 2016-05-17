@@ -14,7 +14,10 @@ if (!isset($_SESSION['user'])) {
 
             <div class="row console">
                 <div class="col-md-10">
-                    <h1>Create a Space</h1>
+                    <div class="search_header">
+                        <h1>Create a Space</h1>
+                    </div>
+                    <br><br>
                     <form enctype="multipart/form-data" method="post" action="includes/create_space.php" class="form-horizontal">
                         <div class="form-group">
                             <input type="text" id="space_name" name="space_name" class="form-control" placeholder="Name Your Space" required>

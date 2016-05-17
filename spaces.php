@@ -14,7 +14,9 @@ if (!isset($_SESSION['user'])) {
 
             <div class="row console">
                 <div class="col-md-10">
-                    <h1>Your Spaces</h1>
+                    <div class="console_header">
+                        <h1>Your Spaces</h1>
+                    </div>
                     <?php show_spaces($view, $_SESSION['user']); ?>
                 </div>
                 <?php include_once ('layout/sidebar.php'); ?>

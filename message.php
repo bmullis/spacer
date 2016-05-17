@@ -18,8 +18,11 @@ if (!isset($_SESSION['user'])) {
 
             <div class="row console">
                 <div class="col-md-10">
-                    <h1>Send Message</h1>
-                    <h3>Send Message To:</h3>
+                    <div class="search_header">
+                        <h1>Send Message</h1>
+                    </div>
+                    <br><br>
+                    <h2>Send Message To:</h2>
                     <?php $the_owner = show_owner($users, $_SESSION['send_to']) ?>
                     <a href="view_profile.php?user=<?php echo base64_encode($_SESSION['send_to']); ?>"><img class="owner_pic" src="<?php echo $the_owner->value->prof_pic; ?>"></a>
                     <h3><?php echo $the_owner->value->f_name . " " . $the_owner->value->l_name; ?></h3>

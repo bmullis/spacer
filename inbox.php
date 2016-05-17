@@ -15,7 +15,10 @@ if (!isset($_SESSION['user'])) {
             <div class="row console">
                 <div class="col-md-10">
                     <?php $user_messages =  get_messages($messages); ?>
-                    <h1>Messages</h1>
+                    <div class="inbox_header">
+                        <h1>Inbox</h1>
+                    </div>
+                    <br>
                     <table class="table">
                         <thead class="thead">
                         <tr>

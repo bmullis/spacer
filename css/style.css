@@ -37,12 +37,13 @@ h2 {
   line-height: 1.5em;
 }
 h3 {
-  font-size: 1.25em;
-  margin-top: 10px;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   letter-spacing: 2px;
   line-height: 1.5em;
+  font-size: 1.25em;
+  letter-spacing: 0;
+  margin-top: 10px;
 }
 img {
   max-width: 100%;
@@ -51,8 +52,11 @@ img {
   background-color: #1eae41;
   border: none;
   border-radius: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.25em;
+  margin-top: .5em;
   margin-bottom: .5em;
-  padding: .75em 1em;
+  padding: .5em .75em;
   transition: all .2s;
 }
 .btn-primary:active,
@@ -62,11 +66,14 @@ img {
 .btn-primary:focus {
   background-color: #008c1f;
 }
+.rounded {
+  border-radius: 50% !important;
+}
 .navbar-default {
   background-color: #000000;
   border-top: 4px solid #1eae41;
   border-bottom: none;
-  padding: .25em 0;
+  padding: 0;
   transition: all 0.2s ease-in-out;
   z-index: 90210;
 }
@@ -74,8 +81,15 @@ img {
 .navbar-fixed-bottom .navbar-collapse {
   max-height: 100vh;
 }
+.navbar-default .owner_pic {
+  margin-top: -0.75em !important;
+  height: 45px !important;
+  width: 45px !important;
+}
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
+  padding-top: 1.4em;
+  padding-bottom: .25em;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:active,
@@ -87,6 +101,8 @@ img {
   font-family: 'Raleway', sans-serif;
   font-size: 2em;
   font-weight: 300;
+  margin-top: .2em;
+  margin-bottom: .2em;
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
 }
@@ -97,9 +113,12 @@ img {
 }
 .navbar-default .navbar-brand img {
   display: inline;
-  margin-right: 10px;
+  margin-right: 0;
   margin-top: -5px;
   width: 30px;
+}
+.navbar-toggle {
+  margin-top: 12px;
 }
 .dropdown-menu {
   background-color: #000000;
@@ -189,6 +208,7 @@ img {
   margin-top: 2em;
   text-align: center;
   padding-right: 0;
+  padding-left: 0;
 }
 .main h1,
 .main-form h1,
@@ -196,7 +216,6 @@ img {
   color: #000000;
   font-size: 2em;
   margin-bottom: .5em;
-  padding: 4% 0 10px;
   text-align: center;
 }
 .main p,
@@ -300,10 +319,47 @@ table td {
 }
 .owner_pic {
   border-radius: 50% !important;
-  height: 100px !important;
-  width: 100px !important;
+  height: 150px !important;
+  width: 150px !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+}
+.main .console .console_header h1,
+.main-inbox .console .inbox_header h1,
+.main-form .console .search_header h1 {
+  color: #ffffff;
+  font-size: 4em;
+  text-transform: uppercase;
+}
+.main .console h3 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.console_header {
+  background-color: #000000;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/header-image.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  color: #ffffff;
+  padding: 3em 0 9em 0;
+  margin-bottom: -10em;
+  margin-top: 20px;
+}
+.inbox_header,
+.search_header {
+  background-color: #000000;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/header-image.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  color: #ffffff;
+  padding: 3em 0 3em 0;
+  margin-top: 20px;
+}
+.main .console .rounded {
+  margin-bottom: 2em;
 }
 #modal {
   background-color: transparent;
@@ -392,6 +448,7 @@ textarea {
   padding-bottom: 1em;
 }
 .online_widget h3 {
+  color: #ffffff;
   margin-top: 10px;
 }
 .online_widget img {
@@ -478,6 +535,23 @@ footer a:active {
     border-radius: 0;
     margin: 1em auto !important;
     width: 90% !important;
+  }
+  .main .console .console_header h1,
+  .main-inbox .console .inbox_header h1,
+  .main-form .console .search_header h1 {
+    font-size: 2em;
+  }
+  .main .console h3 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  .console_header {
+    padding: 1em 0 9em 0;
+  }
+  .inbox_header,
+  .search_header {
+    padding: 1em 0 1em 0;
   }
   .view_message {
     padding: 0 1em 1em 1em;

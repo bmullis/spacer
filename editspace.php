@@ -20,7 +20,10 @@ $space_row = get_single_space($view, $this_space);
 
             <div class="row console">
                 <div class="col-md-10">
-                    <h1>Edit Space</h1>
+                    <div class="search_header">
+                        <h1>Edit Space</h1>
+                    </div>
+                    <br><br>
                     <form enctype="multipart/form-data" method="post" action="includes/update_space.php" class="form-horizontal">
                         <div class="form-group">
                             <input value="<?php echo $space_row->value->title; ?>" type="text" id="space_name" name="space_name" class="form-control" placeholder="Name Your Space" required>
