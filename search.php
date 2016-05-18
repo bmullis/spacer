@@ -17,20 +17,21 @@ if (!isset($_SESSION['user'])) {
                         <h1>Search Spaces</h1>
                     </div>
                     <form id="main_search" enctype="multipart/form-data" method="post" action="includes/update_user.php" class="form-horizontal">
-                        <div class="form-group">
+                        <div class="inline-form">
+                            <h2>What type of Space are you looking for? </h2>
                             <select id="space_type" class="form-control" required>
-                                <option selected="selected" disabled="disabled">Space Type</option>
+                                <option selected="selected">All Spaces</option>
                                 <option>Art Space</option>
                                 <option>Garage Space</option>
                                 <option>Fitness Space</option>
                                 <option>Office Space</option>
                                 <option>Work Space</option>
-                                <option>All Spaces</option>
-                            </select>
+                            </select><br>
+                            <h2>Location of search: </h2>
                             <input type="text" id="space_city" class="form-control" placeholder="City" required>
                             <input type="text" maxlength="2" id="space_state" class="form-control" placeholder="State" required>
                         </div>
-                        <button href="#results" class="btn btn-primary" id="search_submit" type="submit">Search Spaces</button>
+                        <button href="#results" class="btn btn-primary" id="search_submit" type="submit">Search</button>
                     </form>
                     <div id="results">
 

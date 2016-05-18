@@ -123,7 +123,7 @@ img {
   width: 30px;
 }
 .navbar-toggle {
-  margin-top: 12px;
+  margin-top: 14px;
 }
 .dropdown-menu {
   background-color: #ffffff;
@@ -370,7 +370,7 @@ table td {
   margin-top: 10px;
 }
 .main .console .rounded {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 #modal {
   background-color: transparent;
@@ -433,6 +433,18 @@ textarea {
   border-radius: 0 !important;
   margin: 1em auto !important;
   width: 50% !important;
+}
+.inline-form {
+  margin-bottom: 1em;
+}
+.inline-form input,
+.inline-form select {
+  display: inline;
+  width: 10em !important;
+}
+.inline-form h2,
+.inline-form button {
+  display: inline;
 }
 .console input[type=file] {
   width: 200px !important;
